@@ -1,6 +1,6 @@
 # Angel Cruz Individual Project
 Individual project for Enterprise Java Class
 ### Problem Statement
-The project idea came from the need of an interface where a user could log in and pass some time by 
-asking the chat bot some questions to get "intelligent" answers, the goal of the Java chat bot program is to provide 
-entertaining responses and some functional searches in an ask and get answer format.
+There is a social platform for everything except for night life. This project combines the aspect of event searching and 
+social media to provide a platform where a user can search for events in their area; with the ability to sign up and 
+sign in to tag themselves as going to a location, add other friends who also use the app.
