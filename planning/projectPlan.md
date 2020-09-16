@@ -2,7 +2,7 @@
 
 
 ##### Version one
-* plan db schema
+* plan db schema and data needed on each page
 * As any user, I can view the nightlife in my area.
     * Implement landing page with search feature 
         * Set up request to api
