@@ -39,6 +39,23 @@ public class LocationAddress {
     private int id;
 
     /**
+     * Instantiates a new Location address.
+     */
+    public LocationAddress() {
+    }
+
+    public LocationAddress(String street, String city, String state, int zipcode, String latitude, String longitude, Boolean isClosed, Location location) {
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zipcode = zipcode;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.isClosed = isClosed;
+        this.location = location;
+    }
+
+    /**
      * Gets street.
      *
      * @return the street

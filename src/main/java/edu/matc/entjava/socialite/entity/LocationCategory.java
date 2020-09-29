@@ -31,6 +31,23 @@ public class LocationCategory {
     private int id;
 
     /**
+     * Instantiates a new Location category.
+     */
+    public LocationCategory() {
+    }
+
+    /**
+     * Instantiates a new Location category.
+     *
+     * @param name     the name
+     * @param location the location
+     */
+    public LocationCategory(String name, Location location) {
+        this.name = name;
+        this.location = location;
+    }
+
+    /**
      * Gets name.
      *
      * @return the name
