@@ -1027,11 +1027,11 @@ SELECT|sys.sys_config:null
       <Position>6</Position>
       <DataType>bit(1)|0s</DataType>
     </column>
-    <index id="317" parent="288" name="user_id_one">
+    <index id="317" parent="288" name="friends_users_id_fk_2">
       <ColNames>requester_user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="318" parent="288" name="user_id_two">
+    <index id="318" parent="288" name="friends_users_id_fk">
       <ColNames>requested_user_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1040,15 +1040,19 @@ SELECT|sys.sys_config:null
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="320" parent="288" name="friends_ibfk_1">
+    <foreign-key id="320" parent="288" name="friends_users_id_fk_2">
       <ColNames>requester_user_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="321" parent="288" name="friends_ibfk_2">
+    <foreign-key id="321" parent="288" name="friends_users_id_fk">
       <ColNames>requested_user_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="322" parent="289" name="id">
       <Position>1</Position>
@@ -1107,7 +1111,7 @@ SELECT|sys.sys_config:null
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <index id="333" parent="289" name="locations_id">
+    <index id="333" parent="289" name="location_addresses_ibfk_1">
       <ColNames>location_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1120,6 +1124,8 @@ SELECT|sys.sys_config:null
       <ColNames>location_id</ColNames>
       <RefTableName>locations</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="336" parent="290" name="id">
       <Position>1</Position>
@@ -1149,7 +1155,7 @@ SELECT|sys.sys_config:null
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <index id="341" parent="290" name="locations_id">
+    <index id="341" parent="290" name="location_categories_ibfk_1">
       <ColNames>location_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1162,6 +1168,8 @@ SELECT|sys.sys_config:null
       <ColNames>location_id</ColNames>
       <RefTableName>locations</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="344" parent="291" name="id">
       <Position>1</Position>
@@ -1261,7 +1269,7 @@ SELECT|sys.sys_config:null
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <index id="363" parent="292" name="user_id">
+    <index id="363" parent="292" name="searches_ibfk_1">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1274,6 +1282,8 @@ SELECT|sys.sys_config:null
       <ColNames>user_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="366" parent="293" name="id">
       <Position>1</Position>
@@ -1319,7 +1329,7 @@ SELECT|sys.sys_config:null
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <index id="374" parent="293" name="user_id">
+    <index id="374" parent="293" name="user_plan_invites_ibfk_2">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1336,11 +1346,15 @@ SELECT|sys.sys_config:null
       <ColNames>user_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="378" parent="293" name="user_plan_invites_ibfk_1">
       <ColNames>user_plan_id</ColNames>
       <RefTableName>user_plans</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="379" parent="294" name="id">
       <Position>1</Position>
@@ -1376,11 +1390,11 @@ SELECT|sys.sys_config:null
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <index id="385" parent="294" name="user_id">
+    <index id="385" parent="294" name="user_plans_ibfk_2">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="386" parent="294" name="locations_id">
+    <index id="386" parent="294" name="user_plans_ibfk_1">
       <ColNames>location_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1393,11 +1407,15 @@ SELECT|sys.sys_config:null
       <ColNames>user_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="389" parent="294" name="user_plans_ibfk_1">
       <ColNames>location_id</ColNames>
       <RefTableName>locations</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="390" parent="295" name="id">
       <Position>1</Position>

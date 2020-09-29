@@ -28,6 +28,7 @@ class UserDaoTest {
         dao = new GenericDao(User.class);
 
         Database database = Database.getInstance();
+        database.runSQL("cleanSearchTable.sql");
         database.runSQL("cleanUserTable.sql");
     }
 
@@ -76,7 +77,7 @@ class UserDaoTest {
 
         int id = 0;
 
-        User newUser = new User("cruzang000", "test", "cruz", "angel", "acruz1@madisoncollege.edu", true);
+        User newUser = new User("cruzang", "test", "cruz", "angel", "testInsert@madisoncollege.edu", true);
 
         id = dao.insert(newUser);
 
@@ -86,7 +87,7 @@ class UserDaoTest {
 
         assertEquals(newUser, insertedUser);
     }
-    
+
     /**
      * Verify successful delete of user
      */

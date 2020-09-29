@@ -24,19 +24,19 @@ public class User {
     private String email;
     private Boolean isAdmin;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private Set<UserPlan> userPlans = new HashSet<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private Set<Search> searches = new HashSet<>();
 
-    @OneToMany(mappedBy = "requester_user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "requester_user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private Set<Friend> requestedFriends = new HashSet<>();
 
-    @OneToMany(mappedBy = "requested_user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "requested_user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private Set<Friend> receivedFriends = new HashSet<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private Set<UserPlanInvite> userPlanInvites = new HashSet<>();
 
     @CreationTimestamp
