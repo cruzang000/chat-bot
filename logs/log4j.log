@@ -1,0 +1,8 @@
+[DEBUG] 2020-09-28 19:34:41.261 [main] GenericDao - Searching for book with removed = 0
+[ERROR] 2020-09-28 19:42:21.012 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`socialite`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`))
+[DEBUG] 2020-09-28 19:42:21.138 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-09-28 19:43:27.030 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-09-28 19:43:42.764 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-09-28 19:44:28.651 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-09-28 20:55:07.058 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-09-28 20:55:44.433 [main] GenericDao - propertyclosed = false
