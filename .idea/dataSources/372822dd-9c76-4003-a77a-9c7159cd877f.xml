@@ -1304,8 +1304,6 @@ SELECT|sys.sys_config:null
     <column id="369" parent="293" name="attending">
       <Position>4</Position>
       <DataType>bit(1)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>b&apos;0&apos;</DefaultExpression>
     </column>
     <column id="370" parent="293" name="closed">
       <Position>5</Position>

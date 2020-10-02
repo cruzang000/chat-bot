@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * User plan class defines a User plans object and its methods
@@ -180,6 +181,48 @@ public class UserPlan {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    /**
+     * takes userPlanInvite requests set and returns only accepted requests
+     * @param userPlanInviteRequests set of userPlanInvite requests
+     * @param acceptedStatus status to query for
+     * @return userPlanInvites extracted
+     */
+    private Set<UserPlanInvite> extractByAcceptedStatus(Set<UserPlanInvite> userPlanInviteRequests, String acceptedStatus) {
+        switch(acceptedStatus) {
+            case "accepted":
+                return userPlanInviteRequests.stream().filter(UserPlanInvite::getAttending).collect(Collectors.toSet());
+            case "unanswered":
+                return userPlanInviteRequests.stream().filter(request -> (request.getClosed() == null)).collect(Collectors.toSet());
+            default:
+                return userPlanInviteRequests;
+        }
+    }
+
+    /**
+     * Gets userPlanInvites, function takes receivedUserPlanInvites and requestedUserPlanInvites and uses the extract accepted method
+     * to extract accepted requests adding to userPlanInvites set which then gets returned
+     *
+     * @return the userPlanInvites
+     */
+    public Set<UserPlanInvite> getAcceptedUserPlanInvites() {
+
+        Set<UserPlanInvite> userPlanInvites = new HashSet<>();
+
+        //add accepted from received and requested userPlanInvites
+        userPlanInvites.addAll(this.extractByAcceptedStatus(this.userPlanInvites, "accepted"));
+
+        return userPlanInvites;
+    }
+
+    /**
+     * get received userPlanInvite requests that are unanswered using the userPlanInvites extractor
+     * @return userPlanInviteRequestNotifications
+     */
+    public Set<UserPlanInvite> getUserPlanInviteNotifications() {
+        //add accepted from received and requested userPlanInvites
+        return new HashSet<>(this.extractByAcceptedStatus(this.userPlanInvites, "unanswered"));
     }
 
 

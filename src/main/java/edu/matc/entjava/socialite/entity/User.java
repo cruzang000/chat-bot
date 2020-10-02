@@ -5,10 +5,12 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * User class defines a User object and its methods
@@ -290,12 +292,56 @@ public class User {
     }
 
     /**
-     * Sets received friends.
+     * Sets received friends, takes friends set and returns set of accepted request
      *
      * @param receivedFriends the received friends
      */
     public void setReceivedFriends(Set<Friend> receivedFriends) {
         this.receivedFriends = receivedFriends;
+    }
+
+
+    /**
+     * takes friend requests set and returns only accepted requests
+     * @param friendRequests set of friend requests
+     * @param acceptedStatus status to query for
+     * @return friends extracted
+     */
+    private Set<Friend> extractByAcceptedStatus(Set<Friend> friendRequests, String acceptedStatus) {
+        switch(acceptedStatus) {
+            case "accepted":
+                return friendRequests.stream().filter(Friend::getAccepted).collect(Collectors.toSet());
+            case "unanswered":
+                return friendRequests.stream().filter(request -> (request.getAccepted() == null)).collect(Collectors.toSet());
+            default:
+                return friendRequests;
+        }
+    }
+
+    /**
+     * Gets friends, function takes receivedFriends and requestedFriends and uses the extract accepted method
+     * to extract accepted requests adding to friends set which then gets returned
+     *
+     * @return the friends
+     */
+    public Set<Friend> getAcceptedFriends() {
+
+        Set<Friend> friends = new HashSet<>();
+
+        //add accepted from received and requested friends
+        friends.addAll(this.extractByAcceptedStatus(this.receivedFriends, "accepted"));
+        friends.addAll(this.extractByAcceptedStatus(this.requestedFriends, "accepted"));
+
+        return friends;
+    }
+
+    /**
+     * get received friend requests that are unanswered using the friends extractor
+     * @return friendRequestNotifications
+     */
+    public Set<Friend> getFriendNotifications() {
+        //add accepted from received and requested friends
+        return new HashSet<>(this.extractByAcceptedStatus(this.receivedFriends, "unanswered"));
     }
 
     /**
@@ -305,6 +351,16 @@ public class User {
      */
     public void setModified(LocalDateTime modified) {
         this.modified = modified;
+    }
+
+    /**
+     * get user plans that have today's date
+     * @return current plans
+     */
+    public Set<UserPlan> getCurrentPlans() {
+        return this.userPlans.stream()
+                .filter(plan -> plan.getCreated().toLocalDate().isEqual(LocalDateTime.now().toLocalDate()) && !plan.getRemoved())
+                .collect(Collectors.toSet());
     }
 
     @Override

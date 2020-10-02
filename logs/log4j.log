@@ -1,88 +1,52 @@
-[DEBUG] 2020-09-28 22:02:08.171 [main] GenericDao - Searching for entities with name = Aliquet
-[DEBUG] 2020-09-28 22:02:08.328 [main] GenericDao - propertyname = Aenean Company
-[DEBUG] 2020-09-28 22:02:08.624 [main] GenericDao - Searching for entities with state = w
-[DEBUG] 2020-09-28 22:02:08.718 [main] GenericDao - propertystate = wi
-[DEBUG] 2020-09-28 22:02:08.984 [main] GenericDao - Searching for entities with firstName = h
-[DEBUG] 2020-09-28 22:02:09.250 [main] GenericDao - propertylastName = Fusco
-[DEBUG] 2020-09-28 22:02:09.312 [main] GenericDao - propertyfirstName = Alexander
-[DEBUG] 2020-09-28 22:02:09.390 [main] GenericDao - propertyfirstName = hadley
-[DEBUG] 2020-09-28 22:02:10.312 [main] GenericDao - propertyremoved = 0
-[DEBUG] 2020-09-28 22:02:10.641 [main] GenericDao - propertyclosed = false
-[DEBUG] 2020-09-28 22:02:23.710 [main] GenericDao - Searching for entities with name = Aliquet
-[DEBUG] 2020-09-28 22:02:23.898 [main] GenericDao - propertyname = Aenean Company
-[DEBUG] 2020-09-28 22:02:24.195 [main] GenericDao - Searching for entities with state = w
-[DEBUG] 2020-09-28 22:02:24.273 [main] GenericDao - propertystate = wi
-[DEBUG] 2020-09-28 22:02:24.570 [main] GenericDao - Searching for entities with firstName = h
-[DEBUG] 2020-09-28 22:02:24.851 [main] GenericDao - propertylastName = Fusco
-[DEBUG] 2020-09-28 22:02:24.929 [main] GenericDao - propertyfirstName = Alexander
-[DEBUG] 2020-09-28 22:02:24.992 [main] GenericDao - propertyfirstName = hadley
-[DEBUG] 2020-09-28 22:02:25.961 [main] GenericDao - propertyremoved = 0
-[DEBUG] 2020-09-28 22:02:26.274 [main] GenericDao - propertyclosed = false
-[ERROR] 2020-09-28 22:07:23.747 [main] Database - java.lang.NullPointerException
-[ERROR] 2020-09-28 22:15:37.046 [main] Database - java.lang.NullPointerException
-[DEBUG] 2020-09-28 22:15:37.156 [main] GenericDao - propertyrequester_user_id = 628
-[ERROR] 2020-09-28 22:16:28.862 [main] Database - java.lang.NullPointerException
-[DEBUG] 2020-09-28 22:16:28.971 [main] GenericDao - propertyrequester_user = 628
-[ERROR] 2020-09-28 22:16:59.818 [main] Database - java.lang.NullPointerException
-[ERROR] 2020-09-28 22:17:00.194 [main] Database - java.lang.NullPointerException
-[ERROR] 2020-09-28 22:17:00.211 [main] Database - java.lang.NullPointerException
-[DEBUG] 2020-09-28 22:17:00.222 [main] GenericDao - propertyrequester_user = 628
-[ERROR] 2020-09-28 22:17:00.516 [main] Database - java.lang.NullPointerException
-[ERROR] 2020-09-28 22:17:00.526 [main] Database - java.lang.NullPointerException
-[ERROR] 2020-09-28 22:17:00.629 [main] Database - java.lang.NullPointerException
-[ERROR] 2020-09-28 22:17:34.011 [main] Database - java.lang.NullPointerException
-[ERROR] 2020-09-28 22:17:44.447 [main] Database - java.lang.NullPointerException
-[ERROR] 2020-09-28 22:17:51.229 [main] Database - java.lang.NullPointerException
-[ERROR] 2020-09-28 22:18:00.781 [main] Database - java.lang.NullPointerException
-[ERROR] 2020-09-28 22:18:03.786 [main] Database - java.lang.NullPointerException
-[ERROR] 2020-09-28 22:18:12.289 [main] Database - java.lang.NullPointerException
-[ERROR] 2020-09-28 22:18:31.472 [main] Database - java.lang.NullPointerException
-[DEBUG] 2020-09-28 22:19:37.336 [main] GenericDao - propertyrequester_user = 628
-[DEBUG] 2020-09-28 22:19:47.827 [main] GenericDao - propertyrequester_user = 628
-[DEBUG] 2020-09-28 22:36:57.247 [main] GenericDao - propertyname = club
-[DEBUG] 2020-09-28 22:37:09.551 [main] GenericDao - propertyname = club
-[DEBUG] 2020-09-28 22:37:31.245 [main] GenericDao - Searching for entities with name = ar
-[DEBUG] 2020-09-28 22:37:44.445 [main] GenericDao - Searching for entities with name = ar
-[DEBUG] 2020-09-28 22:37:44.601 [main] GenericDao - propertyname = club
-[DEBUG] 2020-09-28 22:37:56.444 [main] GenericDao - Searching for entities with name = ar
-[DEBUG] 2020-09-28 22:37:56.601 [main] GenericDao - propertyname = club
-[DEBUG] 2020-09-28 22:54:57.727 [main] GenericDao - propertystreet = st
-[DEBUG] 2020-09-28 22:55:42.335 [main] GenericDao - propertystreet = n blue st
-[DEBUG] 2020-09-28 22:56:32.381 [main] GenericDao - Searching for entities with name = th
-[DEBUG] 2020-09-28 22:56:32.475 [main] GenericDao - propertystreet = n blue st
-[DEBUG] 2020-09-28 22:57:16.099 [main] GenericDao - Searching for entities with name = th
-[DEBUG] 2020-09-28 22:57:16.193 [main] GenericDao - propertystreet = n blue st
-[DEBUG] 2020-09-28 22:57:41.515 [main] GenericDao - Searching for entities with street = th
-[DEBUG] 2020-09-28 22:57:41.656 [main] GenericDao - propertystreet = n blue st
-[DEBUG] 2020-09-28 22:57:50.820 [main] GenericDao - Searching for entities with street = th
-[DEBUG] 2020-09-28 22:57:50.945 [main] GenericDao - propertystreet = n blue st
-[DEBUG] 2020-09-28 22:57:58.133 [main] GenericDao - propertyrequester_user = 628
-[DEBUG] 2020-09-28 22:57:58.946 [main] GenericDao - Searching for entities with street = th
-[DEBUG] 2020-09-28 22:57:59.056 [main] GenericDao - propertystreet = n blue st
-[DEBUG] 2020-09-28 22:57:59.321 [main] GenericDao - Searching for entities with name = ar
-[DEBUG] 2020-09-28 22:57:59.399 [main] GenericDao - propertyname = club
-[DEBUG] 2020-09-28 22:58:00.087 [main] GenericDao - Searching for entities with name = Aliquet
-[DEBUG] 2020-09-28 22:58:00.197 [main] GenericDao - propertyname = Aenean Company
-[DEBUG] 2020-09-28 22:58:00.431 [main] GenericDao - Searching for entities with state = w
-[DEBUG] 2020-09-28 22:58:00.509 [main] GenericDao - propertystate = wi
-[DEBUG] 2020-09-28 22:58:00.775 [main] GenericDao - Searching for entities with firstName = h
-[DEBUG] 2020-09-28 22:58:00.962 [main] GenericDao - propertylastName = Fusco
-[DEBUG] 2020-09-28 22:58:01.025 [main] GenericDao - propertyfirstName = Alexander
-[DEBUG] 2020-09-28 22:58:01.088 [main] GenericDao - propertyfirstName = hadley
-[DEBUG] 2020-09-28 22:58:01.928 [main] GenericDao - propertyremoved = 0
-[DEBUG] 2020-09-28 22:58:02.240 [main] GenericDao - propertyclosed = false
-[DEBUG] 2020-09-28 22:58:17.285 [main] GenericDao - propertyrequester_user = 628
-[DEBUG] 2020-09-28 22:58:19.052 [main] GenericDao - Searching for entities with street = th
-[DEBUG] 2020-09-28 22:58:19.177 [main] GenericDao - propertystreet = n blue st
-[DEBUG] 2020-09-28 22:58:19.646 [main] GenericDao - Searching for entities with name = ar
-[DEBUG] 2020-09-28 22:58:19.880 [main] GenericDao - propertyname = club
-[DEBUG] 2020-09-28 22:58:20.983 [main] GenericDao - Searching for entities with name = Aliquet
-[DEBUG] 2020-09-28 22:58:21.092 [main] GenericDao - propertyname = Aenean Company
-[DEBUG] 2020-09-28 22:58:21.389 [main] GenericDao - Searching for entities with state = w
-[DEBUG] 2020-09-28 22:58:21.483 [main] GenericDao - propertystate = wi
-[DEBUG] 2020-09-28 22:58:21.801 [main] GenericDao - Searching for entities with firstName = h
-[DEBUG] 2020-09-28 22:58:22.114 [main] GenericDao - propertylastName = Fusco
-[DEBUG] 2020-09-28 22:58:22.176 [main] GenericDao - propertyfirstName = Alexander
-[DEBUG] 2020-09-28 22:58:22.255 [main] GenericDao - propertyfirstName = hadley
-[DEBUG] 2020-09-28 22:58:23.492 [main] GenericDao - propertyremoved = 0
-[DEBUG] 2020-09-28 22:58:23.930 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-09-29 21:22:21.571 [main] UserDaoTest - 2020-09-29
+[DEBUG] 2020-09-29 21:24:24.526 [main] UserDaoTest - today's date: 2020-09-29
+[DEBUG] 2020-09-29 21:27:02.898 [main] UserDaoTest - today's date: 2020-09-29
+[DEBUG] 2020-09-29 21:28:07.048 [main] UserDaoTest - today's date: 2020-09-29
+[DEBUG] 2020-09-29 21:33:34.151 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-09-29 21:33:35.057 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-09-29 21:33:35.158 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-09-29 21:33:35.427 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-09-29 21:33:35.528 [main] GenericDao - propertyname = club
+[DEBUG] 2020-09-29 21:33:36.223 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-09-29 21:33:36.311 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-09-29 21:33:36.527 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-09-29 21:33:36.596 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-09-29 21:33:36.935 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-09-29 21:33:37.267 [main] UserDaoTest - today's date: 2020-09-29
+[DEBUG] 2020-09-29 21:33:37.468 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-09-29 21:33:37.584 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-09-29 21:33:37.701 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-09-29 21:33:38.728 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-09-29 21:33:39.160 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-01 21:25:09.709 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-01 21:25:11.247 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-01 21:25:11.358 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-01 21:25:11.752 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-01 21:25:11.914 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-01 21:25:14.435 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-01 21:25:15.053 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-01 21:25:15.423 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-01 21:25:15.592 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-01 21:25:16.256 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-01 21:25:16.803 [main] UserDaoTest - today's date: 2020-10-01
+[DEBUG] 2020-10-01 21:25:17.005 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-01 21:25:17.106 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-01 21:25:17.218 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-01 21:25:21.275 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-01 21:25:22.832 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-01 21:26:18.141 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-01 21:26:19.556 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-01 21:26:19.669 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-01 21:26:20.013 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-01 21:26:20.153 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-01 21:26:22.349 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-01 21:26:22.496 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-01 21:26:22.766 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-01 21:26:22.983 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-01 21:26:23.640 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-01 21:26:24.227 [main] UserDaoTest - today's date: 2020-10-01
+[DEBUG] 2020-10-01 21:26:24.443 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-01 21:26:24.543 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-01 21:26:24.644 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-01 21:26:28.484 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-01 21:26:30.076 [main] GenericDao - propertyclosed = false

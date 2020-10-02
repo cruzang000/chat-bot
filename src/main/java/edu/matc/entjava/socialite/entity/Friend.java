@@ -57,7 +57,7 @@ public class Friend {
      *
      * @return the requester_user
      */
-    public User getrequester_user() {
+    public User getRequester_user() {
         return requester_user;
     }
 
@@ -66,7 +66,7 @@ public class Friend {
      *
      * @param requester_user the requester_user
      */
-    public void setrequester_user(User requester_user) {
+    public void setRequester_user(User requester_user) {
         this.requester_user = requester_user;
     }
 
@@ -75,7 +75,7 @@ public class Friend {
      *
      * @return the requested_user
      */
-    public User getrequested_user() {
+    public User getRequested_user() {
         return requested_user;
     }
 
@@ -84,7 +84,7 @@ public class Friend {
      *
      * @param requested_user the requested_user
      */
-    public void setrequested_user(User requested_user) {
+    public void setRequested_user(User requested_user) {
         this.requested_user = requested_user;
     }
 

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: edu.matc.entjava.socialite.persistence.FriendDaoTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.387 sec - in edu.matc.entjava.socialite.persistence.FriendDaoTest

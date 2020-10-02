@@ -7,6 +7,7 @@ import edu.matc.entjava.socialite.testUtils.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,7 +20,6 @@ class UserDaoTest {
     GenericDao dao;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-
     /**
      * Creating the dao.
      */
@@ -28,8 +28,10 @@ class UserDaoTest {
         dao = new GenericDao(User.class);
 
         Database database = Database.getInstance();
-        database.runSQL("cleanSearchTable.sql");
         database.runSQL("cleanUserTable.sql");
+        database.runSQL("cleanUserPlansTable.sql");
+        database.runSQL("cleanSearchTable.sql");
+        database.runSQL("cleanFriendTable.sql");
     }
 
     /**
@@ -132,5 +134,40 @@ class UserDaoTest {
     void getByPropertyLikeSuccess() {
         List<User> users = dao.getByPropertyLike("firstName", "h");
         assertEquals(17, users.size());
+    }
+
+    /**
+     * testing user get friends
+     */
+    @Test
+    void getFriends() {
+        User userRetrieved = (User) dao.getById(615);
+
+        //tests 2 accepted requests
+        assertEquals(2, userRetrieved.getAcceptedFriends().size());
+    }
+
+    /**
+     * testing get user friend notification
+     */
+    @Test
+    void getFriendNotifications() {
+        User userRetrieved = (User) dao.getById(620);
+
+        //tests 2 accepted requests
+        assertEquals(2, userRetrieved.getFriendNotifications().size());
+    }
+
+    /**
+     * testing get user friend notification
+     */
+    @Test
+    void getCurrentUserPlans() {
+        User userRetrieved = (User) dao.getById(608);
+
+        logger.debug("today's date: " + LocalDateTime.now().toLocalDate());
+
+        //tests 2 accepted requests
+        assertEquals(1, userRetrieved.getCurrentPlans().size());
     }
 }
