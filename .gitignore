@@ -28,6 +28,10 @@
 
 ## Plugin-specific files:
 
+## users
+*DB.sql
+*UserPlansTable.sql
+
 # IntelliJ
 /out/
 
