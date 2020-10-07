@@ -15,3 +15,7 @@
         * set up entity classes in project and dao for CRUD functionality
         * finished entity unit tests for crud
     
+* week 6:
+    * 5 hours
+        * finished weekly exercise and deployed app to aws 
+        * started implementing zipcode search in indie project

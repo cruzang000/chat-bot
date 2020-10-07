@@ -1,0 +1,20 @@
+doPost:
+
+    get user current info
+        picture
+        first and last name
+        date of birth
+        email
+
+
+    if request to update is sent:
+        validate
+        send update request to db
+
+    return response
+
+validate:
+    picture is valid
+    first and last name is valid if changing
+    date of birth is a valid date and puts user at 18 or older
+    email is a valid email

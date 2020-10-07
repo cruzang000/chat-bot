@@ -1,0 +1,9 @@
+edu/matc/entjava/socialite/persistence/LocationCategoryDaoTest.class
+edu/matc/entjava/socialite/persistence/SearchDaoTest.class
+edu/matc/entjava/socialite/persistence/LocationDaoTest.class
+edu/matc/entjava/socialite/persistence/UserPlanDaoTest.class
+edu/matc/entjava/socialite/persistence/UserDaoTest.class
+edu/matc/entjava/socialite/testUtils/Database.class
+edu/matc/entjava/socialite/persistence/UserPlanInviteDaoTest.class
+edu/matc/entjava/socialite/persistence/FriendDaoTest.class
+edu/matc/entjava/socialite/persistence/LocationAddressDaoTest.class

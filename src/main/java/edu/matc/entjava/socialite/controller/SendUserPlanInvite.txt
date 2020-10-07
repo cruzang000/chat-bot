@@ -1,0 +1,16 @@
+doPost:
+    receive user info
+        user_id
+        user_plan_id
+        attending as null
+        closed is false
+        declineMessage is empty
+
+    validate()
+
+validate:
+     user_id valid user id in db
+     user_plan_id valid plan in db
+     attending as null set to null
+     closed is false set to false
+     declineMessage is empty is empty

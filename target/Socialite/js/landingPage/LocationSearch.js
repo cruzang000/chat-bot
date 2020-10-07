@@ -9,16 +9,16 @@ export const LocationSearch = () => {
 
     const searchForm = document.getElementById("locationSearchForm").elements;
 
-    let formData = {
-        zipcode:  searchForm.namedItem("location").value
-    };
+    const formData = { zipcode:  searchForm.namedItem("location").value };
 
     //returns true if errors were found else false if validation passed
-    let validationResults = new FormValidation(formData).validateForm();
+    const validationResults = new FormValidation(formData).validateForm();
+
+    const url = "postalCodeSearchJSON?maxRows=1&postalcode=" + zipcode;
 
     //if valid results create house object passing in house form data
     if (!(validationResults).includes(false)) {
-        fetch('#', {
+        fetch(url, {
             method: 'GET',
             body: JSON.stringify(formData),
             headers: {'Content-type': 'application/json; charset=UTF-8'}

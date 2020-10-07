@@ -1,0 +1,18 @@
+doPost:
+
+    get user info
+        friend request
+            - recently requested accepted
+            - not answered
+            user picture
+            user name
+            when it was sent
+        user plan invites
+            - not answered
+            - recent
+            requester user info
+                picture
+                name
+            user plan info
+                location name
+                creation date
