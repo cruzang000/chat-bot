@@ -47,7 +47,7 @@
 
 # Maven
 /target/
-/log/
+/logs/
 /lib/
 
 # mpeltonen/sbt-idea plugin
