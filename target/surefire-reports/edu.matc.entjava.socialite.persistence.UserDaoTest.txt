@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: edu.matc.entjava.socialite.persistence.UserDaoTest
--------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.833 sec - in edu.matc.entjava.socialite.persistence.UserDaoTest

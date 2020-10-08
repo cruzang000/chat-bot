@@ -1,9 +1,0 @@
-doPost:
-    receives geo location
-
-    send api request for plans to yelp api
-
-    return list of plans
-
-validate:
-    geo location not empty
