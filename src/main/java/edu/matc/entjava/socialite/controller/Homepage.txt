@@ -1,0 +1,10 @@
+
+function:
+    - get location addresses count grouped by city
+
+    - get top 5
+
+    -forward to home view
+
+
+

@@ -1,0 +1,24 @@
+doPost:
+    receive user info
+        first name
+        last name
+        age
+        email
+        username
+        password
+        retypedPassword
+
+    validate info passing in user info
+
+    if valid add user
+
+    redirect to user home page
+
+validate
+    first name is letters only and not empty
+    last name is letters only and not empty
+    age is a number and older than 18 and not empty
+    email is a valid email and not empty
+    username letters and numbers and not empty
+    password not empty
+    retyped password matches password

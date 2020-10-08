@@ -1,0 +1,12 @@
+doPost:
+    receives zipcode
+
+    validate zipcode
+
+    send api request for geo location
+
+    return geo location
+
+validate:
+    zipcode - is a number and 5 digits
+

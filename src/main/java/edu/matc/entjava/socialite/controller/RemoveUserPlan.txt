@@ -1,0 +1,13 @@
+doPost:
+
+    receive info
+        user plan id
+
+    validate
+
+    remove from db
+
+    return response
+
+validate:
+    user plan exists in db
