@@ -21,6 +21,8 @@
 ## log4j
 **/log4j2.properties
 
+**/database.properties
+
 # Sensitive or high-churn files:
 .idea/dataSources.ids
 .idea/dataSources.xml
