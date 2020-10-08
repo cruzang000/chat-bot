@@ -9,7 +9,7 @@
 .idea/jsLibraryMappings.xml
 
 ## sql files
-*.sql
+**/*.sql
 
 ## hibernate
 **/hibernate.cfg.xml
