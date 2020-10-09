@@ -32,6 +32,7 @@ class UserDaoTest {
         database.runSQL("cleanUserPlansTable.sql");
         database.runSQL("cleanSearchTable.sql");
         database.runSQL("cleanFriendTable.sql");
+        database.runSQL("cleanUserRolesTable.sql");
     }
 
     /**

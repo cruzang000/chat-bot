@@ -1,0 +1,331 @@
+[DEBUG] 2020-10-08 20:14:18.157 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 20:14:18.926 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:14:19.256 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:14:19.416 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:14:19.504 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:14:19.595 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:14:22.170 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:14:24.340 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:14:24.667 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:14:25.160 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:14:25.270 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:14:27.234 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:14:27.274 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:14:27.543 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:14:27.657 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:14:28.271 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-08 20:18:31.889 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 20:18:32.523 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:18:32.815 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:18:32.999 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:18:33.087 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:18:33.171 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:18:35.325 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:18:37.314 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:18:37.651 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:18:38.252 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:18:38.287 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:18:40.707 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:18:40.748 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:18:41.022 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:18:41.142 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:18:41.760 [main] GenericDao - propertyremoved = 0
+[ERROR] 2020-10-08 20:27:54.499 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:54.640 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:54.665 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:27:54.674 [main] GenericDao - propertyrequester_user = 628
+[ERROR] 2020-10-08 20:27:54.854 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:54.881 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:54.906 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:54.982 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('student'), 'student', 'Fonz', 'tests@technorati.com', false, '2020-09-27 15:59' at line 1
+[ERROR] 2020-10-08 20:27:55.005 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.026 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.046 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.069 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_roles`, CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.101 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('student'), 'student', 'Fonz', 'tests@technorati.com', false, '2020-09-27 15:59' at line 1
+[ERROR] 2020-10-08 20:27:55.120 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.140 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.159 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.178 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_roles`, CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:27:55.180 [main] GenericDao - Searching for entities with firstName = h
+[ERROR] 2020-10-08 20:27:55.219 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('student'), 'student', 'Fonz', 'tests@technorati.com', false, '2020-09-27 15:59' at line 1
+[ERROR] 2020-10-08 20:27:55.239 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.258 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.276 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.293 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_roles`, CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.317 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('student'), 'student', 'Fonz', 'tests@technorati.com', false, '2020-09-27 15:59' at line 1
+[ERROR] 2020-10-08 20:27:55.333 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.350 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.366 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.383 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_roles`, CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:27:55.389 [main] UserDaoTest - today's date: 2020-10-08
+[ERROR] 2020-10-08 20:27:55.413 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('student'), 'student', 'Fonz', 'tests@technorati.com', false, '2020-09-27 15:59' at line 1
+[ERROR] 2020-10-08 20:27:55.435 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.458 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.480 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.498 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_roles`, CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.521 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('student'), 'student', 'Fonz', 'tests@technorati.com', false, '2020-09-27 15:59' at line 1
+[ERROR] 2020-10-08 20:27:55.537 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.551 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.580 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.600 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_roles`, CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:27:55.601 [main] GenericDao - propertylastName = Fusco
+[ERROR] 2020-10-08 20:27:55.629 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('student'), 'student', 'Fonz', 'tests@technorati.com', false, '2020-09-27 15:59' at line 1
+[ERROR] 2020-10-08 20:27:55.645 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.661 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.677 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.693 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_roles`, CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:27:55.694 [main] GenericDao - propertyfirstName = Alexander
+[ERROR] 2020-10-08 20:27:55.719 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('student'), 'student', 'Fonz', 'tests@technorati.com', false, '2020-09-27 15:59' at line 1
+[ERROR] 2020-10-08 20:27:55.732 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.747 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.761 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.775 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_roles`, CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:27:55.775 [main] GenericDao - propertyfirstName = hadley
+[ERROR] 2020-10-08 20:27:55.794 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('student'), 'student', 'Fonz', 'tests@technorati.com', false, '2020-09-27 15:59' at line 1
+[ERROR] 2020-10-08 20:27:55.809 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.824 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.839 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.855 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_roles`, CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.877 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('student'), 'student', 'Fonz', 'tests@technorati.com', false, '2020-09-27 15:59' at line 1
+[ERROR] 2020-10-08 20:27:55.892 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.906 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.919 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.933 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_roles`, CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.952 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('student'), 'student', 'Fonz', 'tests@technorati.com', false, '2020-09-27 15:59' at line 1
+[ERROR] 2020-10-08 20:27:55.964 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.976 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:55.988 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:56.000 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_roles`, CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:56.021 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('student'), 'student', 'Fonz', 'tests@technorati.com', false, '2020-09-27 15:59' at line 1
+[ERROR] 2020-10-08 20:27:56.035 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:56.050 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:56.064 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:56.077 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_roles`, CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:56.144 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plan_invites`, CONSTRAINT `user_plan_invites_ibfk_1` FOREIGN KEY (`user_plan_id`) REFERENCES `user_plans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:56.166 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plan_invites`, CONSTRAINT `user_plan_invites_ibfk_1` FOREIGN KEY (`user_plan_id`) REFERENCES `user_plans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:56.189 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plan_invites`, CONSTRAINT `user_plan_invites_ibfk_1` FOREIGN KEY (`user_plan_id`) REFERENCES `user_plans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:56.207 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plan_invites`, CONSTRAINT `user_plan_invites_ibfk_1` FOREIGN KEY (`user_plan_id`) REFERENCES `user_plans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:27:56.208 [main] GenericDao - propertyclosed = false
+[ERROR] 2020-10-08 20:27:56.231 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plan_invites`, CONSTRAINT `user_plan_invites_ibfk_1` FOREIGN KEY (`user_plan_id`) REFERENCES `user_plans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:56.253 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plan_invites`, CONSTRAINT `user_plan_invites_ibfk_1` FOREIGN KEY (`user_plan_id`) REFERENCES `user_plans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:27:56.378 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:27:56.440 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:27:56.636 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:27:56.691 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:27:57.220 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:27:57.278 [main] GenericDao - propertyname = Aenean Company
+[ERROR] 2020-10-08 20:27:57.361 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:57.379 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:57.397 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:27:57.397 [main] GenericDao - Searching for entities with state = w
+[ERROR] 2020-10-08 20:27:57.414 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:57.430 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:27:57.431 [main] GenericDao - propertystate = wi
+[ERROR] 2020-10-08 20:27:57.449 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:57.465 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`searches`, CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:57.495 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:57.518 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:57.538 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:57.558 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:27:57.558 [main] GenericDao - propertyremoved = 0
+[ERROR] 2020-10-08 20:27:57.576 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:27:57.596 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`user_plans`, CONSTRAINT `user_plans_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:28:38.876 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:28:39.035 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:28:39.062 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:28:39.071 [main] GenericDao - propertyrequester_user = 628
+[ERROR] 2020-10-08 20:28:39.246 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:28:39.271 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[ERROR] 2020-10-08 20:28:39.297 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`socialite_test`.`friends`, CONSTRAINT `friends_users_id_fk` FOREIGN KEY (`requested_user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[DEBUG] 2020-10-08 20:28:39.669 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:28:40.116 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:28:40.422 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:28:40.529 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:28:40.636 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:28:42.556 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:28:44.848 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:28:45.267 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:28:45.765 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:28:45.888 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:28:48.242 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:28:48.314 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:28:48.649 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:28:48.854 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:28:49.480 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-08 20:29:17.988 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 20:29:18.570 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:29:18.860 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:29:19.003 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:29:19.071 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:29:19.147 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:29:20.001 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:29:20.277 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:29:20.337 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:29:20.452 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:29:20.482 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:29:20.747 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:29:20.786 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:29:20.893 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:29:20.943 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:29:21.084 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-08 20:29:41.683 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 20:29:42.636 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:29:43.065 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:29:43.259 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:29:43.347 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:29:43.437 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:29:45.770 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:29:48.044 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:29:48.468 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:29:48.974 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:29:49.087 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:29:51.250 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:29:51.293 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:29:51.558 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:29:51.680 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:29:52.288 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-08 20:31:06.879 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 20:31:07.613 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:31:07.964 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:31:08.161 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:31:08.255 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:31:08.333 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:31:11.161 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:31:13.336 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:31:13.757 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:31:14.259 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:31:14.374 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:31:16.334 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:31:16.448 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:31:16.643 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:31:16.844 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:31:17.372 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-08 20:34:40.486 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 20:34:41.166 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:34:41.500 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:34:41.683 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:34:41.769 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:34:41.853 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:34:44.540 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:34:46.807 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:34:47.235 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:34:47.670 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:34:47.770 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:34:49.735 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:34:49.850 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:34:50.057 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:34:50.239 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:34:50.777 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-08 20:37:44.065 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 20:37:44.709 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:37:44.993 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:37:45.150 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:37:45.228 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:37:45.297 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:37:47.632 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:37:49.988 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:37:50.415 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:37:50.920 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:37:51.039 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:37:53.120 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:37:53.232 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:37:53.438 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:37:53.559 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:37:54.171 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-08 20:42:15.311 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 20:42:15.960 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:42:16.320 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:42:16.494 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:42:16.571 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:42:16.647 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:42:18.849 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:42:20.924 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:42:21.346 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:42:21.848 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:42:21.965 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:42:23.935 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:42:23.976 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:42:24.238 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:42:24.346 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:42:24.967 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-08 20:44:52.002 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 20:44:52.644 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:44:52.966 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:44:53.122 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:44:53.198 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:44:53.265 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:44:55.393 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:44:57.363 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:44:57.783 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:44:58.216 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:44:58.309 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:45:00.259 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:45:00.299 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:45:00.505 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:45:00.619 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:45:01.156 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-08 20:45:53.611 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 20:45:54.363 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:45:54.660 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:45:54.817 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:45:54.893 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:45:54.971 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:45:57.362 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:45:59.511 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:45:59.931 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:46:00.436 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:46:00.535 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:46:02.599 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:46:02.640 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:46:02.905 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:46:03.022 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:46:03.634 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-08 20:51:11.401 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 20:51:12.130 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:51:12.454 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:51:12.632 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:51:12.717 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:51:12.794 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:51:15.326 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:51:17.570 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:51:17.991 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:51:18.485 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:51:18.587 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:51:20.653 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:51:20.692 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:51:20.957 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:51:21.076 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:51:21.617 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-08 20:58:55.730 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 20:58:56.445 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 20:58:56.746 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 20:58:56.928 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 20:58:57.013 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 20:58:57.091 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 20:58:59.555 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 20:59:01.824 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 20:59:02.247 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 20:59:02.755 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 20:59:02.871 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 20:59:04.949 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 20:59:05.042 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 20:59:05.270 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 20:59:05.473 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 20:59:06.020 [main] GenericDao - propertyremoved = 0
+[DEBUG] 2020-10-08 21:04:41.843 [main] GenericDao - propertyrequester_user = 628
+[DEBUG] 2020-10-08 21:04:42.487 [main] GenericDao - Searching for entities with firstName = h
+[DEBUG] 2020-10-08 21:04:42.778 [main] UserDaoTest - today's date: 2020-10-08
+[DEBUG] 2020-10-08 21:04:42.940 [main] GenericDao - propertylastName = Fusco
+[DEBUG] 2020-10-08 21:04:43.022 [main] GenericDao - propertyfirstName = Alexander
+[DEBUG] 2020-10-08 21:04:43.091 [main] GenericDao - propertyfirstName = hadley
+[DEBUG] 2020-10-08 21:04:45.283 [main] GenericDao - propertyclosed = false
+[DEBUG] 2020-10-08 21:04:47.336 [main] GenericDao - Searching for entities with name = ar
+[DEBUG] 2020-10-08 21:04:47.751 [main] GenericDao - propertyname = club
+[DEBUG] 2020-10-08 21:04:48.172 [main] GenericDao - Searching for entities with street = th
+[DEBUG] 2020-10-08 21:04:48.285 [main] GenericDao - propertystreet = n blue st
+[DEBUG] 2020-10-08 21:04:50.151 [main] GenericDao - Searching for entities with name = Aliquet
+[DEBUG] 2020-10-08 21:04:50.265 [main] GenericDao - propertyname = Aenean Company
+[DEBUG] 2020-10-08 21:04:50.477 [main] GenericDao - Searching for entities with state = w
+[DEBUG] 2020-10-08 21:04:50.592 [main] GenericDao - propertystate = wi
+[DEBUG] 2020-10-08 21:04:51.138 [main] GenericDao - propertyremoved = 0

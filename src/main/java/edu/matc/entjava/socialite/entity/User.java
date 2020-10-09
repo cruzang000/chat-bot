@@ -41,6 +41,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private Set<UserPlanInvite> userPlanInvites = new HashSet<>();
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    private Set<UserPlanInvite> userRoles = new HashSet<>();
+
     @CreationTimestamp
     private LocalDateTime created;
     @UpdateTimestamp
@@ -337,7 +340,8 @@ public class User {
 
     /**
      * get received friend requests that are unanswered using the friends extractor
-     * @return friendRequestNotifications
+     *
+     * @return friendRequestNotifications friend notifications
      */
     public Set<Friend> getFriendNotifications() {
         //add accepted from received and requested friends
@@ -355,12 +359,31 @@ public class User {
 
     /**
      * get user plans that have today's date
+     *
      * @return current plans
      */
     public Set<UserPlan> getCurrentPlans() {
         return this.userPlans.stream()
                 .filter(plan -> plan.getCreated().toLocalDate().isEqual(LocalDateTime.now().toLocalDate()) && !plan.getRemoved())
                 .collect(Collectors.toSet());
+    }
+
+    /**
+     * Gets user roles.
+     *
+     * @return the user roles
+     */
+    public Set<UserPlanInvite> getUserRoles() {
+        return userRoles;
+    }
+
+    /**
+     * Sets user roles.
+     *
+     * @param userRoles the user roles
+     */
+    public void setUserRoles(Set<UserPlanInvite> userRoles) {
+        this.userRoles = userRoles;
     }
 
     @Override
