@@ -1,11 +1,7 @@
 package edu.matc.entjava.socialite.persistence;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.matc.entjava.socialite.entity.GeoSearch;
+import edu.matc.entjava.socialite.entity.Location;
 import edu.matc.entjava.util.PropertiesLoader;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,54 +9,71 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
 import java.util.Properties;
+import org.json.*;
 
 public class YelpDao implements PropertiesLoader {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     protected Properties properties;
+    GenericDao genericDao;
 
     /**
-     * make request to yelp api using geo locations, returns array of locations
-     * @param lat
-     * @param lng
-     * @return
+     * make request to yelp api using geo locations, returns arraylist of locations
+     * @param lat latitude of location
+     * @param lng longitude of location
+     * @param locationType category type for location
+     * @return array list of locations
      */
-    public YelpLocation[] getLocationByGeo(double lat, double lng) {
+    public ArrayList<Location> getLocationByGeoAndType(double lat, double lng, String locationType) {
 
-        //TODO code to get url from properties file
-//        properties = this.loadProperties("main/resources/api.properties");
-//        String url = properties.getProperty("geonames.url.base")
-//                + properties.getProperty("geonames.url.addon.postalCodeSearch") + zipcode + "&"
-//                + properties.getProperty("geonames.url.addon.maxRows") + "1&"
-//                + properties.getProperty("geonames.url.addon.username");
-
-        String url = "http://api.geonames.org/postalCodeSearchJSON?username=cruzang000&maxRows=1&postalcode="
-                + zipcode;
+        properties = this.loadProperties("/api.properties");
+        String url = properties.getProperty("yelp.url.base");
 
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target(url);
-        String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
+        WebTarget target = client.target(url)
+                .queryParam("term", locationType)
+                .queryParam("latitude", lat)
+                .queryParam("longitude", lng);
 
-        //trim string to match collection format
-        response = StringUtils.substringBetween(response, "[", "]");
-        response = "[" + response + "]";
+        String response = target.request(MediaType.APPLICATION_JSON)
+                .header("Authorization", properties.getProperty("yelp.api.key"))
+                .get(String.class);
 
-        //instantiate and configure object mapper to use java array
-        ObjectMapper mapper = new ObjectMapper();
+        //json object
+        JSONArray businesses = new JSONObject(response).getJSONArray("businesses");
 
-        mapper.configure(DeserializationFeature.USE_JAVA_ARRAY_FOR_JSON_ARRAY, true);
+        genericDao = new GenericDao(Location.class);
 
-        GeoSearch geoSearch = null;
+        ArrayList<Location> locations = new ArrayList<>();
 
-        //try to convert response to GeoSearch array catch json processing exception
-        try {
-            geoSearch = mapper.readValue(response, GeoSearch[].class)[0];
-        } catch (JsonProcessingException e) {
-            logger.error("GeoSearch request error:", e);
+        //loops through json object and creates new location then adds to array list
+        for (int x = 0; x < businesses.length(); x++) {
+            logger.info(businesses.getJSONObject(x));
+            Location location = new Location(
+                businesses.getJSONObject(x).has("name") ? businesses.getJSONObject(x).get("name").toString() : null,
+                businesses.getJSONObject(x).has("url") ? businesses.getJSONObject(x).get("url").toString() : null,
+                businesses.getJSONObject(x).has("id") ? businesses.getJSONObject(x).get("id").toString() : null,
+                businesses.getJSONObject(x).has("price") ? businesses.getJSONObject(x).get("price").toString().length() : 0,
+                businesses.getJSONObject(x).has("rating") ? (double) businesses.getJSONObject(x).get("rating") : 0,
+                businesses.getJSONObject(x).has("image_url") ? businesses.getJSONObject(x).get("image_url").toString() : null,
+                businesses.getJSONObject(x).has("display_phone") ? businesses.getJSONObject(x).get("display_phone").toString() : null,
+                businesses.getJSONObject(x).has("review_count") ? (int) businesses.getJSONObject(x).get("review_count") : 0
+            );
+
+
+
+            //TODO: implement location address, and category entity creation and inserts as well
+
+
+            //add location to db
+            genericDao.insert(location);
+
+            locations.add(location);
         }
 
-        return geoSearch;
+        return locations;
     }
 }
 

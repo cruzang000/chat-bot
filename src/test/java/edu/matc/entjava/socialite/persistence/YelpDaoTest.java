@@ -1,25 +1,33 @@
 package edu.matc.entjava.socialite.persistence;
 
-import edu.matc.entjava.socialite.entity.GeoSearch;
+import edu.matc.entjava.socialite.entity.Search;
+import edu.matc.entjava.socialite.entity.User;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * The type Yelp dao test.
+ */
 class YelpDaoTest {
 
+    /**
+     * Gets locations by geo and type.
+     */
     @Test
-    void getLocationByGeo() {
+    void getLocationByGeoAndType() {
 
         GeoDao geoDao = new GeoDao();
-        GeoSearch geoLocation = geoDao.getGeoLocationByZipcode(53511);
-        double lat = geoLocation.getLat();
-        double lng = geoLocation.getLng();
 
-        //yelp dao
+        User user = (User) new GenericDao(User.class).getById(608);
+
+        Search search = geoDao.getGeoLocationsByZipcode(53511, 1, user).get(0);
+
+        double lat = search.getLatitude();
+        double lng = search.getLongitude();
+
         YelpDao yelpDao = new YelpDao();
-        YelpLocation yelpLocations = yelpDao.getLocationByGeo(lat, lng);
 
-        assertEquals("Beloit", yelpLocations.length);
-
+        assertEquals(20, yelpDao.getLocationByGeoAndType(lat, lng, "drinks").size());
     }
 }

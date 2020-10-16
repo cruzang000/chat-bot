@@ -65,6 +65,8 @@ class SearchDaoTest {
                 53719,
                 "Madison",
                 "wi",
+                92.232,
+                91.323,
                 user
         );
 

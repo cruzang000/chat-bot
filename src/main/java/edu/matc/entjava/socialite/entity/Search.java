@@ -20,6 +20,8 @@ public class Search {
     private int zipcode;
     private String city;
     private String state;
+    private Double latitude;
+    private Double longitude;
 
     @ManyToOne
     private User user;
@@ -56,6 +58,25 @@ public class Search {
     }
 
     /**
+     * Instantiates a new Search.
+     *
+     * @param zipcode   the zipcode
+     * @param city      the city
+     * @param state     the state
+     * @param latitude  the latitude
+     * @param longitude the longitude
+     * @param user      the user
+     */
+    public Search(int zipcode, String city, String state, double latitude, double longitude, User user) {
+        this.zipcode = zipcode;
+        this.city = city;
+        this.state = state;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.user = user;
+    }
+
+    /**
      * Gets zipcode.
      *
      * @return the zipcode
@@ -71,6 +92,44 @@ public class Search {
      */
     public void setZipcode(int zipcode) {
         this.zipcode = zipcode;
+    }
+
+    /**
+     * Gets latitude.
+     *
+     * @return the latitude
+     */
+    public double getLatitude() {
+        return latitude;
+    }
+
+
+    /**
+     * Sets latitude.
+     *
+     * @param latitude the latitude
+     */
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+
+    /**
+     * Gets longitude.
+     *
+     * @return the longitude
+     */
+    public double getLongitude() {
+        return longitude;
+    }
+
+    /**
+     * Sets longitude.
+     *
+     * @param longitude the longitude
+     */
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     /**

@@ -21,7 +21,7 @@ public class Location {
     private String yelpUrl;
     private String yelpID;
     private int price;
-    private int rating;
+    private double rating;
     private String imageUrl;
     private String phone;
     private int reviewCount;
@@ -62,7 +62,7 @@ public class Location {
      * @param phone       the phone
      * @param reviewCount the review count
      */
-    public Location(String name, String yelpUrl, String yelpID, int price, int rating, String imageUrl, String phone, int reviewCount) {
+    public Location(String name, String yelpUrl, String yelpID, int price, double rating, String imageUrl, String phone, int reviewCount) {
         this.name = name;
         this.yelpUrl = yelpUrl;
         this.yelpID = yelpID;
@@ -150,7 +150,7 @@ public class Location {
      *
      * @return the rating
      */
-    public int getRating() {
+    public double getRating() {
         return rating;
     }
 
@@ -159,7 +159,7 @@ public class Location {
      *
      * @param rating the rating
      */
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 
