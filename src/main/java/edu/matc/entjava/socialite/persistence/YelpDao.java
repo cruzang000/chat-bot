@@ -51,7 +51,7 @@ public class YelpDao implements PropertiesLoader {
         JSONArray businesses = new JSONObject(response).getJSONArray("businesses");
 
         //change price "$" char to rating out of 5 using length of value
-        businesses.forEach(business -> { logger.info(business); }); // loop out each different business object
+        //businesses.forEach(business -> { logger.info(business); }); // loop out each different business object
 
         logger.info(businesses);
 
@@ -70,7 +70,10 @@ public class YelpDao implements PropertiesLoader {
             locations = mapper.readValue(businesses.toString(), Location[].class);
 
             //add searches to db
-            Arrays.stream(locations).forEach(genericDao::insert);
+            Arrays.stream(locations).forEach(entity -> { 
+                logger.info(entity);
+                genericDao.insert(entity);
+            });
         } catch (JsonProcessingException e) {
             logger.error("GeoSearch request error:", e);
         }
