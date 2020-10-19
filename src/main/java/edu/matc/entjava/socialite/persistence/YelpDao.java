@@ -70,9 +70,10 @@ public class YelpDao implements PropertiesLoader {
             locations = mapper.readValue(businesses.toString(), Location[].class);
 
             //add searches to db
-            Arrays.stream(locations).forEach(entity -> { 
+            Arrays.stream(locations).forEach(entity -> {
+
                 logger.info(entity);
-                genericDao.insert(entity);
+                //genericDao.insert(entity);
             });
         } catch (JsonProcessingException e) {
             logger.error("GeoSearch request error:", e);

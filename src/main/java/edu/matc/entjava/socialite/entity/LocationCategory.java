@@ -20,7 +20,6 @@ public class LocationCategory {
     @JsonProperty("title")
     private String name;
 
-    @JsonMerge
     @ManyToOne
     private Location location;
 
