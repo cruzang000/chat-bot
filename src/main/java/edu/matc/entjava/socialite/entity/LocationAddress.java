@@ -1,5 +1,6 @@
 package edu.matc.entjava.socialite.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -17,13 +18,18 @@ import java.util.Set;
 @Table(name = "location_addresses")
 public class LocationAddress {
 
+    @JsonProperty("address1")
     private String street;
+    @JsonProperty("city")
     private String city;
+    @JsonProperty("state")
     private String state;
+    @JsonProperty("zip_code")
     private int zipcode;
+    @JsonProperty("latitude")
     private String latitude;
+    @JsonProperty("longitude")
     private String longitude;
-    private Boolean isClosed;
 
     @ManyToOne
     private Location location;
@@ -44,14 +50,13 @@ public class LocationAddress {
     public LocationAddress() {
     }
 
-    public LocationAddress(String street, String city, String state, int zipcode, String latitude, String longitude, Boolean isClosed, Location location) {
+    public LocationAddress(String street, String city, String state, int zipcode, String latitude, String longitude, Location location) {
         this.street = street;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.isClosed = isClosed;
         this.location = location;
     }
 
@@ -164,24 +169,6 @@ public class LocationAddress {
     }
 
     /**
-     * Gets closed.
-     *
-     * @return the closed
-     */
-    public Boolean getClosed() {
-        return isClosed;
-    }
-
-    /**
-     * Sets closed.
-     *
-     * @param closed the closed
-     */
-    public void setClosed(Boolean closed) {
-        isClosed = closed;
-    }
-
-    /**
      * Gets location.
      *
      * @return the location
@@ -265,13 +252,12 @@ public class LocationAddress {
                 state.equals(that.state) &&
                 Objects.equals(latitude, that.latitude) &&
                 Objects.equals(longitude, that.longitude) &&
-                isClosed.equals(that.isClosed) &&
                 location.equals(that.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(street, city, state, zipcode, latitude, longitude, isClosed, location, id);
+        return Objects.hash(street, city, state, zipcode, latitude, longitude, location, id);
     }
 
     @Override
@@ -283,7 +269,6 @@ public class LocationAddress {
                 ", zipcode=" + zipcode +
                 ", latitude='" + latitude + '\'' +
                 ", longitude='" + longitude + '\'' +
-                ", isClosed=" + isClosed +
                 ", location=" + location +
                 ", id=" + id +
                 '}';

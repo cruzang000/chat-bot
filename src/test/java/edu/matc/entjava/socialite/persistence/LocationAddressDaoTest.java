@@ -66,7 +66,6 @@ class LocationAddressDaoTest {
                 53718,
                 "",
                 "",
-                true,
                 (Location) new GenericDao(Location.class).getById(8)
         );
 

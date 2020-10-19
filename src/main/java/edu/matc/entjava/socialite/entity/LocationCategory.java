@@ -1,5 +1,7 @@
 package edu.matc.entjava.socialite.entity;
 
+import com.fasterxml.jackson.annotation.JsonMerge;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -15,8 +17,10 @@ import java.util.Objects;
 @Table(name = "location_categories")
 public class LocationCategory {
 
+    @JsonProperty("title")
     private String name;
 
+    @JsonMerge
     @ManyToOne
     private Location location;
 

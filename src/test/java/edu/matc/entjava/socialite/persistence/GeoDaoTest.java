@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * The type Geo dao test.
@@ -23,11 +24,11 @@ class GeoDaoTest {
 
         User user = (User) new GenericDao(User.class).getById(608);
 
-        ArrayList<Search> searches = geoDao.getGeoLocationsByZipcode(53511, 1, user);
+        Search[] searches = geoDao.getGeoLocationsByZipcode(53511, 1, user);
 
-        user.getSearches().addAll(searches);
+        user.getSearches().addAll(Arrays.asList(searches));
 
-        assertEquals(1, searches.size());
-        assertEquals("Beloit", searches.get(0).getCity());
+        assertEquals(1, searches.length);
+        assertEquals("Beloit", searches[0].getCity());
     }
 }

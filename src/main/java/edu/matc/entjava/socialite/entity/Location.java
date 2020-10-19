@@ -1,5 +1,8 @@
 package edu.matc.entjava.socialite.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonMerge;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -17,20 +20,31 @@ import java.util.Set;
 @Table(name = "locations")
 public class Location {
 
+    @JsonProperty("name")
     private String name;
+    @JsonProperty("yelpUrl")
     private String yelpUrl;
+    @JsonProperty("id")
     private String yelpID;
-    private int price;
+    @JsonProperty("price")
+    private String price;
+    @JsonProperty("rating")
     private double rating;
+    @JsonProperty("image_url")
     private String imageUrl;
+    @JsonProperty("phone")
     private String phone;
+    @JsonProperty("review_count")
     private int reviewCount;
+    @JsonProperty("is_closed")
+    private Boolean isClosed;
 
     @CreationTimestamp
     private LocalDateTime created;
     @UpdateTimestamp
     private LocalDateTime modified;
 
+    @JsonMerge
     @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<LocationCategory> categories = new HashSet<>();
 
@@ -62,7 +76,7 @@ public class Location {
      * @param phone       the phone
      * @param reviewCount the review count
      */
-    public Location(String name, String yelpUrl, String yelpID, int price, double rating, String imageUrl, String phone, int reviewCount) {
+    public Location(String name, String yelpUrl, String yelpID, String price, double rating, String imageUrl, String phone, int reviewCount) {
         this.name = name;
         this.yelpUrl = yelpUrl;
         this.yelpID = yelpID;
@@ -89,6 +103,24 @@ public class Location {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * Gets closed.
+     *
+     * @return the closed
+     */
+    public Boolean getClosed() {
+        return isClosed;
+    }
+
+    /**
+     * Sets closed.
+     *
+     * @param closed the closed
+     */
+    public void setClosed(Boolean closed) {
+        isClosed = closed;
     }
 
     /**
@@ -127,12 +159,13 @@ public class Location {
         this.yelpID = yelpID;
     }
 
+
     /**
      * Gets price.
      *
      * @return the price
      */
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
@@ -141,7 +174,7 @@ public class Location {
      *
      * @param price the price
      */
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -258,6 +291,7 @@ public class Location {
      *
      * @return the id
      */
+    @JsonIgnore()
     public int getId() {
         return id;
     }

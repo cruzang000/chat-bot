@@ -62,7 +62,7 @@ class LocationDaoTest {
                 "Orci Consectetuer Euismod Institute",
                 "www.yelp.com",
                 "18E33DA9-2526-676E-DBC8-0236B4F3722B",
-                1,
+                "$",
                 4,
                 "www.yelp.com/test",
                 "6081234567",

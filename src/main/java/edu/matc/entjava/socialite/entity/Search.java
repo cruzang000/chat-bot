@@ -1,5 +1,6 @@
 package edu.matc.entjava.socialite.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -17,10 +18,15 @@ import java.util.Set;
 @Table(name = "searches")
 public class Search {
 
+    @JsonProperty("postalCode")
     private int zipcode;
+    @JsonProperty("placeName")
     private String city;
+    @JsonProperty("ISO3166-2")
     private String state;
+    @JsonProperty("lat")
     private Double latitude;
+    @JsonProperty("lng")
     private Double longitude;
 
     @ManyToOne

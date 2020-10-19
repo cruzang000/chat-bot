@@ -19,3 +19,10 @@
     * 5 hours
         * finished weekly exercise and deployed app to aws 
         * started implementing zipcode search in indie project
+        
+* week 7:
+    * 10 hours
+        * finished week 7 exercise and implemented auth into my individual project
+        * implemented yelp api service class and geonames service classes
+        * implemented yelpDao and geoDao to use api service classes to get data and submit to db
+        * built and passed test for new daos and service classes
