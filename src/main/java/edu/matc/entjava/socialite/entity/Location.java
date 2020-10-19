@@ -44,7 +44,7 @@ public class Location {
     @UpdateTimestamp
     private LocalDateTime modified;
 
-    @JsonProperty("Categories")
+
     @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<LocationCategory> categories = new HashSet<>();
 
