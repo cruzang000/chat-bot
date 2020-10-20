@@ -23,7 +23,6 @@ public class YelpDao implements PropertiesLoader {
     private final Logger logger = LogManager.getLogger(this.getClass());
     protected Properties properties;
     GenericDao genericDao;
-    private Object business;
 
     /**
      * make request to yelp api using geo locations, returns arraylist of locations
@@ -50,11 +49,6 @@ public class YelpDao implements PropertiesLoader {
         //json object
         JSONArray businesses = new JSONObject(response).getJSONArray("businesses");
 
-        //change price "$" char to rating out of 5 using length of value
-        //businesses.forEach(business -> { logger.info(business); }); // loop out each different business object
-
-        logger.info(businesses);
-
         genericDao = new GenericDao(Location.class);
 
         //instantiate and configure object mapper to use java array
@@ -72,7 +66,7 @@ public class YelpDao implements PropertiesLoader {
             //add searches to db
             Arrays.stream(locations).forEach(entity -> {
 
-                logger.info(entity);
+                logger.info(entity.getAddresses());
                 //genericDao.insert(entity);
             });
         } catch (JsonProcessingException e) {

@@ -26,12 +26,9 @@ public class LocationAddress {
     private String state;
     @JsonProperty("zip_code")
     private int zipcode;
-    @JsonProperty("latitude")
-    private String latitude;
-    @JsonProperty("longitude")
-    private String longitude;
 
     @ManyToOne
+    @JsonProperty()
     private Location location;
 
     @CreationTimestamp
@@ -50,13 +47,11 @@ public class LocationAddress {
     public LocationAddress() {
     }
 
-    public LocationAddress(String street, String city, String state, int zipcode, String latitude, String longitude, Location location) {
+    public LocationAddress(String street, String city, String state, int zipcode, Location location) {
         this.street = street;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
-        this.latitude = latitude;
-        this.longitude = longitude;
         this.location = location;
     }
 
@@ -130,42 +125,6 @@ public class LocationAddress {
      */
     public void setZipcode(int zipcode) {
         this.zipcode = zipcode;
-    }
-
-    /**
-     * Gets latitude.
-     *
-     * @return the latitude
-     */
-    public String getLatitude() {
-        return latitude;
-    }
-
-    /**
-     * Sets latitude.
-     *
-     * @param latitude the latitude
-     */
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
-
-    /**
-     * Gets longitude.
-     *
-     * @return the longitude
-     */
-    public String getLongitude() {
-        return longitude;
-    }
-
-    /**
-     * Sets longitude.
-     *
-     * @param longitude the longitude
-     */
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
     }
 
     /**
@@ -250,14 +209,12 @@ public class LocationAddress {
                 street.equals(that.street) &&
                 city.equals(that.city) &&
                 state.equals(that.state) &&
-                Objects.equals(latitude, that.latitude) &&
-                Objects.equals(longitude, that.longitude) &&
                 location.equals(that.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(street, city, state, zipcode, latitude, longitude, location, id);
+        return Objects.hash(street, city, state, zipcode, location, id);
     }
 
     @Override
@@ -267,8 +224,6 @@ public class LocationAddress {
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zipcode=" + zipcode +
-                ", latitude='" + latitude + '\'' +
-                ", longitude='" + longitude + '\'' +
                 ", location=" + location +
                 ", id=" + id +
                 '}';

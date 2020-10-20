@@ -28,7 +28,7 @@ class YelpDaoTest {
         User user = (User) new GenericDao(User.class).getById(608);
 
         Search[] searches = geoDao.getGeoLocationsByZipcode(53511, 1, user);
-
+        logger.info(searches);
         user.getSearches().addAll(Arrays.asList(searches));
 
         double lat = searches[0].getLatitude();

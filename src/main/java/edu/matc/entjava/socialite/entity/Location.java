@@ -1,5 +1,6 @@
 package edu.matc.entjava.socialite.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonMerge;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -44,11 +45,13 @@ public class Location {
     @UpdateTimestamp
     private LocalDateTime modified;
 
-
     @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonProperty("categories")
     private Set<LocationCategory> categories = new HashSet<>();
 
     @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonProperty("location")
+    @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     private Set<LocationAddress> addresses = new HashSet<>();
 
     @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
