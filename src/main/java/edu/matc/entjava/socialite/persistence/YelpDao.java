@@ -25,7 +25,8 @@ public class YelpDao implements PropertiesLoader {
     GenericDao genericDao;
 
     /**
-     * make request to yelp api using geo locations, returns arraylist of locations
+     * make request to yelp api using geo locations, ands locations to db and
+     * returns location object with categories and addresses
      * @param lat latitude of location
      * @param lng longitude of location
      * @param locationType category type for location
@@ -54,6 +55,7 @@ public class YelpDao implements PropertiesLoader {
         //instantiate and configure object mapper to use java array
         ObjectMapper mapper = new ObjectMapper();
 
+        //configure mapper to use array and not fail on unused properties
         mapper.configure(DeserializationFeature.USE_JAVA_ARRAY_FOR_JSON_ARRAY, true)
                 .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
@@ -61,14 +63,11 @@ public class YelpDao implements PropertiesLoader {
 
         //try to convert response to GeoSearch array catch json processing exception
         try {
+            //map location, location.locationCategories, location.locationAddresses
             locations = mapper.readValue(businesses.toString(), Location[].class);
 
-            //add searches to db
-            Arrays.stream(locations).forEach(entity -> {
-
-                logger.info(entity.getAddresses());
-                //genericDao.insert(entity);
-            });
+            //add locations, locationCategories, and locationAdresses to db
+            Arrays.stream(locations).forEach(genericDao::insert);
         } catch (JsonProcessingException e) {
             logger.error("GeoSearch request error:", e);
         }

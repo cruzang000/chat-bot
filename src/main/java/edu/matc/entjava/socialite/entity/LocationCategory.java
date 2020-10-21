@@ -14,7 +14,6 @@ import java.util.Objects;
  */
 @Entity(name = "LocationCategory")
 @Table(name = "location_categories")
-//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class LocationCategory {
 
     @JsonProperty("title")
@@ -22,6 +21,7 @@ public class LocationCategory {
 
     @ManyToOne
     @JoinColumn(name = "location_id", referencedColumnName = "id")
+    @JsonBackReference
     private Location location;
 
     @CreationTimestamp

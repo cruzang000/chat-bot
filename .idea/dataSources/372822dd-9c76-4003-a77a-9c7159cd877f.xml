@@ -5973,7 +5973,6 @@ User</ColNames>
     <column id="830" parent="321" name="price">
       <Position>5</Position>
       <DataType>varchar(5)|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="831" parent="321" name="rating">
       <Position>6</Position>
@@ -6508,7 +6507,6 @@ User</ColNames>
     <column id="931" parent="330" name="price">
       <Position>5</Position>
       <DataType>varchar(5)|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="932" parent="330" name="rating">
       <Position>6</Position>
