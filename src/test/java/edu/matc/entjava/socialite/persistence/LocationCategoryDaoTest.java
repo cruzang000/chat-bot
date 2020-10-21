@@ -38,7 +38,7 @@ class LocationCategoryDaoTest {
     @Test
     void getAllLocationsSuccess() {
         List<LocationCategory> locationCategories = dao.getAllEntities();
-        assertEquals(6, locationCategories.size());
+        assertEquals(2, locationCategories.size());
     }
 
     /**
@@ -46,9 +46,9 @@ class LocationCategoryDaoTest {
      */
     @Test
     void getById() {
-        LocationCategory locationCategoryRetrieved = (LocationCategory) dao.getById(5);
+        LocationCategory locationCategoryRetrieved = (LocationCategory) dao.getById(23);
         assertNotNull(locationCategoryRetrieved);
-        assertEquals(5, locationCategoryRetrieved.getId());
+        assertEquals(23, locationCategoryRetrieved.getId());
     }
 
     /**
@@ -75,8 +75,8 @@ class LocationCategoryDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(6));
-        assertNull(dao.getById(6));
+        dao.delete(dao.getById(23));
+        assertNull(dao.getById(23));
     }
 
     /**
@@ -86,13 +86,13 @@ class LocationCategoryDaoTest {
     void updateSuccess() {
         String newName = "bar";
 
-        LocationCategory locationToUpdate = (LocationCategory) dao.getById(5);
+        LocationCategory locationToUpdate = (LocationCategory) dao.getById(23);
 
         locationToUpdate.setName(newName);
 
         dao.saveOrUpdate(locationToUpdate);
 
-        LocationCategory retrievedLocation = (LocationCategory) dao.getById(5);
+        LocationCategory retrievedLocation = (LocationCategory) dao.getById(23);
 
         assertEquals(locationToUpdate, retrievedLocation);
     }
@@ -102,9 +102,9 @@ class LocationCategoryDaoTest {
      */
     @Test
     void getByPropertyValueSuccess() {
-        List<LocationCategory> locationCategories = dao.getByPropertyValue("name", "club");
-        assertEquals(3, locationCategories.size());
-        assertEquals(5, locationCategories.get(0).getId());
+        List<LocationCategory> locationCategories = dao.getByPropertyValue("name", "bar");
+        assertEquals(2, locationCategories.size());
+        assertEquals(23, locationCategories.get(0).getId());
     }
 
     /**
@@ -112,7 +112,7 @@ class LocationCategoryDaoTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<LocationCategory> locationCategories = dao.getByPropertyLike("name", "ar");
-        assertEquals(3, locationCategories.size());
+        List<LocationCategory> locationCategories = dao.getByPropertyLike("name", "bar");
+        assertEquals(2, locationCategories.size());
     }
 }

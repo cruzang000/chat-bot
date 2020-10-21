@@ -62,7 +62,7 @@ class UserPlanDaoTest {
 
         User user = (User) new GenericDao(User.class).getById(608);
 
-        Location location = (Location) new GenericDao(Location.class).getById(1);
+        Location location = (Location) new GenericDao(Location.class).getById(5);
 
         UserPlan newUserPlan = new UserPlan(false, user, location);
 

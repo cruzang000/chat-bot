@@ -37,7 +37,7 @@ class LocationDaoTest {
     @Test
     void getAllLocationsSuccess() {
         List<Location> locations = dao.getAllEntities();
-        assertEquals(100, locations.size());
+        assertEquals(102, locations.size());
     }
 
     /**
@@ -45,9 +45,9 @@ class LocationDaoTest {
      */
     @Test
     void getById() {
-        Location locationRetrieved = (Location) dao.getById(1);
+        Location locationRetrieved = (Location) dao.getById(10);
         assertNotNull(locationRetrieved);
-        assertEquals(1, locationRetrieved.getId());
+        assertEquals(10, locationRetrieved.getId());
     }
 
     /**
@@ -66,7 +66,8 @@ class LocationDaoTest {
                 4,
                 "www.yelp.com/test",
                 "6081234567",
-                803863873
+                803863873,
+                false
         );
 
         id = dao.insert(newLocation);
@@ -83,8 +84,8 @@ class LocationDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(1));
-        assertNull(dao.getById(1));
+        dao.delete(dao.getById(10));
+        assertNull(dao.getById(10));
     }
 
     /**
@@ -94,13 +95,13 @@ class LocationDaoTest {
     void updateSuccess() {
         String newName = "The U";
 
-        Location locationToUpdate = (Location) dao.getById(1);
+        Location locationToUpdate = (Location) dao.getById(10);
 
         locationToUpdate.setName(newName);
 
         dao.saveOrUpdate(locationToUpdate);
 
-        Location retrievedLocation = (Location) dao.getById(1);
+        Location retrievedLocation = (Location) dao.getById(10);
 
         assertEquals(locationToUpdate, retrievedLocation);
     }

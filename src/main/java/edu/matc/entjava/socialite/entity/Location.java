@@ -79,7 +79,7 @@ public class Location {
      * @param phone       the phone
      * @param reviewCount the review count
      */
-    public Location(String name, String yelpUrl, String yelpID, String price, double rating, String imageUrl, String phone, int reviewCount) {
+    public Location(String name, String yelpUrl, String yelpID, String price, double rating, String imageUrl, String phone, int reviewCount, Boolean isClosed) {
         this.name = name;
         this.yelpUrl = yelpUrl;
         this.yelpID = yelpID;
@@ -88,6 +88,7 @@ public class Location {
         this.imageUrl = imageUrl;
         this.phone = phone;
         this.reviewCount = reviewCount;
+        this.isClosed = isClosed;
     }
 
     /**
@@ -367,34 +368,20 @@ public class Location {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Location location = (Location) o;
-        return price == location.price &&
-                rating == location.rating &&
+        return Double.compare(location.rating, rating) == 0 &&
                 reviewCount == location.reviewCount &&
                 id == location.id &&
                 name.equals(location.name) &&
                 yelpUrl.equals(location.yelpUrl) &&
                 yelpID.equals(location.yelpID) &&
+                price.equals(location.price) &&
                 imageUrl.equals(location.imageUrl) &&
-                phone.equals(location.phone);
+                phone.equals(location.phone) &&
+                isClosed.equals(location.isClosed);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, yelpUrl, yelpID, price, rating, imageUrl, phone, reviewCount, id);
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" +
-                "name='" + name + '\'' +
-                ", yelpUrl='" + yelpUrl + '\'' +
-                ", yelpID='" + yelpID + '\'' +
-                ", price=" + price +
-                ", rating=" + rating +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", phone='" + phone + '\'' +
-                ", reviewCount=" + reviewCount +
-                ", id=" + id +
-                '}';
+        return Objects.hash(name, yelpUrl, yelpID, price, rating, imageUrl, phone, reviewCount, isClosed, id);
     }
 }

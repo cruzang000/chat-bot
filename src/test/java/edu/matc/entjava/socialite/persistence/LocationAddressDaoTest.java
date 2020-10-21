@@ -38,7 +38,7 @@ class LocationAddressDaoTest {
     @Test
     void getAllLocationsSuccess() {
         List<LocationAddress> locationAddresses = dao.getAllEntities();
-        assertEquals(5, locationAddresses.size());
+        assertEquals(2, locationAddresses.size());
     }
 
     /**
@@ -46,9 +46,9 @@ class LocationAddressDaoTest {
      */
     @Test
     void getById() {
-        LocationAddress locationCategoryRetrieved = (LocationAddress) dao.getById(1);
+        LocationAddress locationCategoryRetrieved = (LocationAddress) dao.getById(20);
         assertNotNull(locationCategoryRetrieved);
-        assertEquals(1, locationCategoryRetrieved.getId());
+        assertEquals(20, locationCategoryRetrieved.getId());
     }
 
     /**
@@ -81,8 +81,8 @@ class LocationAddressDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(3));
-        assertNull(dao.getById(3));
+        dao.delete(dao.getById(20));
+        assertNull(dao.getById(20));
     }
 
     /**
@@ -92,13 +92,13 @@ class LocationAddressDaoTest {
     void updateSuccess() {
         String newStreet = "s red st";
 
-        LocationAddress locationAddressToUpdate = (LocationAddress) dao.getById(3);
+        LocationAddress locationAddressToUpdate = (LocationAddress) dao.getById(20);
 
         locationAddressToUpdate.setStreet(newStreet);
 
         dao.saveOrUpdate(locationAddressToUpdate);
 
-        LocationAddress retrievedLocationAddress = (LocationAddress) dao.getById(3);
+        LocationAddress retrievedLocationAddress = (LocationAddress) dao.getById(20);
 
         assertEquals(locationAddressToUpdate, retrievedLocationAddress);
     }
@@ -109,8 +109,8 @@ class LocationAddressDaoTest {
     @Test
     void getByPropertyValueSuccess() {
         List<LocationAddress> locationAddresses = dao.getByPropertyValue("street", "n blue st");
-        assertEquals(3, locationAddresses.size());
-        assertEquals(3, locationAddresses.get(0).getId());
+        assertEquals(2, locationAddresses.size());
+        assertEquals(20, locationAddresses.get(0).getId());
     }
 
     /**
@@ -118,7 +118,7 @@ class LocationAddressDaoTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<LocationAddress> locationAddresses = dao.getByPropertyLike("street", "th");
+        List<LocationAddress> locationAddresses = dao.getByPropertyLike("street", "blue");
         assertEquals(2, locationAddresses.size());
     }
 }

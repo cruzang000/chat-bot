@@ -38,7 +38,7 @@ class SearchDaoTest {
     @Test
     void getAllSearchesSuccess() {
         List<Search> searches = dao.getAllEntities();
-        assertEquals(2, searches.size());
+        assertEquals(4, searches.size());
     }
 
     /**
@@ -46,9 +46,9 @@ class SearchDaoTest {
      */
     @Test
     void getById() {
-        Search searchRetrieved = (Search) dao.getById(2);
+        Search searchRetrieved = (Search) dao.getById(19);
         assertNotNull(searchRetrieved);
-        assertEquals(2, searchRetrieved.getId());
+        assertEquals(19, searchRetrieved.getId());
     }
 
     /**
@@ -84,8 +84,8 @@ class SearchDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(2));
-        assertNull(dao.getById(2));
+        dao.delete(dao.getById(19));
+        assertNull(dao.getById(19));
     }
 
     /**
@@ -95,13 +95,13 @@ class SearchDaoTest {
     void updateSuccess() {
         int newZipcode = 53563;
 
-        Search searchToUpdate = (Search) dao.getById(2);
+        Search searchToUpdate = (Search) dao.getById(19);
 
         searchToUpdate.setZipcode(newZipcode);
 
         dao.saveOrUpdate(searchToUpdate);
 
-        Search retrievedSearch = (Search) dao.getById(2);
+        Search retrievedSearch = (Search) dao.getById(19);
 
         assertEquals(searchToUpdate, retrievedSearch);
     }
@@ -112,7 +112,7 @@ class SearchDaoTest {
     @Test
     void getByPropertyValueSuccess() {
         List<Search> searches = dao.getByPropertyValue("state", "wi");
-        assertEquals(2, searches.size());
+        assertEquals(4, searches.size());
         assertEquals(1, searches.get(0).getId());
     }
 
@@ -122,6 +122,6 @@ class SearchDaoTest {
     @Test
     void getByPropertyLikeSuccess() {
         List<Search> searches = dao.getByPropertyLike("state", "w");
-        assertEquals(2, searches.size());
+        assertEquals(4, searches.size());
     }
 }

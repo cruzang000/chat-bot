@@ -166,8 +166,6 @@ class UserDaoTest {
     void getCurrentUserPlans() {
         User userRetrieved = (User) dao.getById(608);
 
-        logger.debug("today's date: " + LocalDateTime.now().toLocalDate());
-
         //tests 2 accepted requests
         assertEquals(1, userRetrieved.getCurrentPlans().size());
     }
