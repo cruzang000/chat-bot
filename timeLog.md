@@ -26,3 +26,8 @@
         * implemented yelp api service class and geonames service classes
         * implemented yelpDao and geoDao to use api service classes to get data and submit to db
         * built and passed test for new daos and service classes
+* week 8:
+    * 15 hours
+        * debugged geodao and yelp api, converted them over to use object mapper
+        * trouble getting the object mapper to read the nested json data correctly but got it to work
+        * got tests to pass and succesfull insert of entities and associated entities
