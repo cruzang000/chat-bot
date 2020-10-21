@@ -1,6 +1,7 @@
 package edu.matc.entjava.socialite.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -16,6 +17,7 @@ import java.util.Set;
  */
 @Entity(name = "LocationAddress")
 @Table(name = "location_addresses")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class LocationAddress {
 
     @JsonProperty("address1")
@@ -28,7 +30,7 @@ public class LocationAddress {
     private int zipcode;
 
     @ManyToOne
-    @JsonProperty()
+    @JoinColumn(name = "location_id", referencedColumnName = "id")
     private Location location;
 
     @CreationTimestamp

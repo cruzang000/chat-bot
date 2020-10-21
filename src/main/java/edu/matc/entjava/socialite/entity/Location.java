@@ -1,9 +1,6 @@
 package edu.matc.entjava.socialite.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonMerge;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -19,6 +16,7 @@ import java.util.Set;
  */
 @Entity(name = "Location")
 @Table(name = "locations")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Location {
 
     @JsonProperty("name")
@@ -49,7 +47,7 @@ public class Location {
     @JsonProperty("categories")
     private Set<LocationCategory> categories = new HashSet<>();
 
-    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonProperty("location")
     @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     private Set<LocationAddress> addresses = new HashSet<>();
