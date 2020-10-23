@@ -64,9 +64,11 @@ public class GeoDao implements PropertiesLoader {
 
             //add searches to db
             Arrays.stream(searches).forEach(search -> {
-                search.setUser(user);
-                genericDao.insert(search);
+                search.setUser(user); // set search user
+                user.getSearches().add(search); // add search to user searches
+                genericDao.insert(search); // insert in db
             });
+
         } catch (JsonProcessingException e) {
             logger.error("GeoSearch request error:", e);
         }

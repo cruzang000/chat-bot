@@ -14,24 +14,28 @@ export const LocationSearch = () => {
     //returns true if errors were found else false if validation passed
     const validationResults = new FormValidation(formData).validateForm();
 
-    const url = "postalCodeSearchJSON?maxRows=1&postalcode=" + zipcode;
-
     //if valid results create house object passing in house form data
     if (!(validationResults).includes(false)) {
-        fetch(url, {
-            method: 'GET',
-            body: JSON.stringify(formData),
-            headers: {'Content-type': 'application/json; charset=UTF-8'}
-        }).then(function (response) {
-            return response.ok ? response.json() : {};
-        }).then(function (data) {
-            console.log(data);
-        }).catch(function (error) {
-            alert("Something went wrong! Try again.")
-        });
+        requestLocations(formData.zipcode);
     }
 
     return false;
 };
+
+const requestLocations = (zipcode) => {
+    const url = "/socialite/api/geoLocations"; //+ zipcode;
+
+    fetch(url, {
+        headers: {'Content-type': 'application/json; charset=UTF-8', 'Accept': 'application/json'}
+    }).then((response) => {
+        if (response.ok) {
+            console.log(response);
+            console.log(response.text());
+            console.log(response.json());
+        }
+    }).catch((error) => {
+        alert("Something went wrong! Try again.")
+    });
+}
 
 document.querySelector('#locationSearchForm').addEventListener('submit', LocationSearch);
