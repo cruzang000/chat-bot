@@ -1,4 +1,3 @@
-<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -14,22 +13,3 @@
 
     <title>Document</title>
 </head>
-<body>
-    <noscript>enable javascript to get full functionality!</noscript>
-
-    <div>
-        <form id="locationSearchForm">
-            <label>zipcode:
-                <input type="text" name="location">
-            </label>
-
-            <small id="searchZipcodeError" class="error text-danger">Must enter a valid 5 digit zip code!</small>
-
-            <button type="submit" id="locationSearch">search</button>
-        </form>
-    </div>
-
-    <script src="js/landingPage/LocationSearch.js" type="module"></script>
-</body>
-
-</html>

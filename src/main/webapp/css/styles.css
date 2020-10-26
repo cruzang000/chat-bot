@@ -1,3 +1,19 @@
 .error {
     visibility: hidden;
 }
+
+.bg-navy {
+    background-color: #101562;
+}
+
+.bg-dark-navy {
+    background-color: #121e4d;
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+.white-placeholder::placeholder {
+    color: white
+}

@@ -11,7 +11,8 @@ public class SocialiteApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
-        h.add(GeoLocations.class );
+        h.add(GeoLocations.class);
+        h.add(YelpLocations.class);
         return h;
     }
 }

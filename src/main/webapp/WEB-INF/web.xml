@@ -40,8 +40,8 @@
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
-            <form-login-page>/loginForm.jsp</form-login-page>
-            <form-error-page>/loginError.jsp</form-error-page>
+            <form-login-page>/jsp/loginForm.jsp</form-login-page>
+            <form-error-page>/jsp/loginError.jsp</form-error-page>
         </form-login-config>
     </login-config>
 </web-app>
