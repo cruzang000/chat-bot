@@ -1,19 +1,48 @@
-.error {
-    visibility: hidden;
-}
-
 .bg-navy {
-    background-color: #101562;
+    background-color: #101562 !important;
 }
 
 .bg-dark-navy {
-    background-color: #121e4d;
+    background-color: #121e4d !important;
 }
 
 .transparent {
-    background-color: transparent;
+    background-color: transparent !important;
+}
+
+.star-rating {
+    color: #e76f02;
 }
 
 .white-placeholder::placeholder {
     color: white
+}
+
+.locationSearchImage {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.searchIcon {
+
+}
+
+.bg-blue-light {
+    background-color: #8fabe5 !important;
+}
+
+.bg-dark-grey {
+    background-color: #3e485d;
+}
+
+.opacity-medium {
+    opacity: 60%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.searchSubText {
+    font-size: .8em;
 }

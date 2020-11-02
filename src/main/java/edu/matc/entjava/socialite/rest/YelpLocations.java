@@ -48,26 +48,8 @@ public class YelpLocations {
                 // get first address
                 Optional<LocationAddress> locationAddressOpt = location.getAddresses().stream().findFirst();
 
-                // check address is present
-                if (locationAddressOpt.isPresent()) {
-                    //get first address
-                    LocationAddress locationAddress = locationAddressOpt.get();
-                    // create json object
-                    JSONObject locationObject = new JSONObject();
-
-                    // add properties needed
-                    locationObject.put("id", location.getId()); // id
-                    locationObject.put("name", location.getName()); // name
-                    locationObject.put("imgURL", location.getImageUrl()); // image url
-                    locationObject.put("address-street", locationAddress.getStreet()); // street address
-                    locationObject.put("address-city-state", locationAddress.getCity() + ", "
-                            + locationAddress.getState() + " " + locationAddress.getZipcode()); // city state zip
-                    locationObject.put("phone", location.getPhone());
-                    locationObject.put("rating", location.getRating());
-
-                    // add json object to json array
-                    locations.put(locationObject);
-                }
+                // check address is present and create json object
+                locationAddressOpt.ifPresent(locationAddress -> locations.put(locationToJson(location, locationAddress)));
             }
         }
 
@@ -83,5 +65,28 @@ public class YelpLocations {
      */
     protected Boolean validateGeo(String lat, String lng) {
         return true;//lat.matches("^[0-9]{5}$") && lng.matches("^[0-9]{5}$");
+    }
+
+    /**
+     * takes location object and location address optional object and parses to json object format needed
+     * @param locationAddress
+     * @param location
+     * @return locationObject
+     */
+    protected JSONObject locationToJson(Location location, LocationAddress locationAddress) {
+        // create json object and setting properties manually to avoid unwanted fields
+        JSONObject locationObject = new JSONObject();
+
+        // add properties needed
+        locationObject.put("id", location.getId()); // id
+        locationObject.put("name", location.getName()); // name
+        locationObject.put("imgURL", location.getImageUrl()); // image url
+        locationObject.put("address-street", locationAddress.getStreet()); // street address
+        locationObject.put("address-city-state", locationAddress.getCity() + ", "
+                + locationAddress.getState() + " " + locationAddress.getZipcode()); // city state zip
+        locationObject.put("phone", location.getPhone());
+        locationObject.put("rating", location.getRating());
+
+        return locationObject;
     }
 }

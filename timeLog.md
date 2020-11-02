@@ -31,3 +31,7 @@
         * debugged geodao and yelp api, converted them over to use object mapper
         * trouble getting the object mapper to read the nested json data correctly but got it to work
         * got tests to pass and succesfull insert of entities and associated entities
+
+* week 8:
+* 10 hours
+    * got landing page working, users are able to search with a zipcode and get locatoins from yelp api now

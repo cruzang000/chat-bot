@@ -1,4 +1,4 @@
-<FORM ACTION="j_security_check" METHOD="POST">
+<form ACTION="j_security_check" METHOD="POST">
     <small hidden>Invalid password</small>
 
     <label for="j_username">username:</label>
@@ -8,4 +8,4 @@
     <input type="password" name="j_password" id="j_password" required>
 
     <button type="submit">Login</button>
-</FORM>
+</form>

@@ -2,25 +2,25 @@ import FormValidation from "./FormValidation.js";
 
 /**
  * module controls logic for location search form submission, validates and sends data to java back end api
+ * @param paramZipcode optional pass in zipcode, if not passed in assumes form was submitted
+ * @returns {boolean}
+ * @constructor
  */
-export const LocationSearch = () => {
-
+export const LocationSearch = (paramZipcode = 0) => {
     event.preventDefault();
 
+    // get search form from dom
     const searchForm = document.getElementById("locationSearchForm").elements;
-    const formData = { zipcode:  searchForm.namedItem("location").value };
+
+    // check if zipcode was passed in param if not gets zipcode value from form, then validates
+    const zipcode = !isNaN(paramZipcode) ? parseInt(paramZipcode) : searchForm.namedItem("location").value;
+    const formData = { zipcode: zipcode };
 
     //returns true if errors were found else false if validation passed
     const validationResults = new FormValidation(formData).validateForm();
 
     //if valid results create house object passing in house form data
-    if (!(validationResults).includes(false)) {
-        const zipcode = formData.zipcode;
-        const geoNamesUrl = "/socialite/api/geoLocations/zipcode/?" + $.param({zipcode: zipcode});
-
-        //send request for geo location and pass in callback function to send data to
-        sendGetRequest(geoNamesUrl, requestLocations);
-    }
+    if (!(validationResults).includes(false)) { requestLocations(formData.zipcode); }
 
     return false;
 };
@@ -34,7 +34,19 @@ const sendGetRequest = (url, callback) => {
     fetch(url, {headers: {'Content-type': 'application/json; charset=UTF-8', 'Accept': 'application/json'}})
     .then(response => response.json()) // parse response as json
     .then(data => callback(data))// pass data to call back function
-    .catch((error) => { alert("Error sending request, try again." + " url: " + url)});
+    .catch((error) => { alert("Error sending request, try again." + " url: " + url) });
+}
+
+/**
+ * takes zipcode and sends get request for geo object passing in callback function
+ * @param zipcode
+ */
+const requestLocations = zipcode => {
+    // update storage property for last searched zipcode
+    appData.lastZipcodeSearched = zipcode;
+    appStorageObject.updateSessionStorage(appData);
+
+    sendGetRequest("/socialite/api/geoLocations/zipcode?" + $.param({zipcode: zipcode}), requestFromYelp);
 }
 
 /**
@@ -42,15 +54,26 @@ const sendGetRequest = (url, callback) => {
  * than sends api request for locations passing in parseYelpResponse to handle response
  * @param data
  */
-const requestLocations = data => {
+const requestFromYelp = data => {
     //sets to geoObject[latitude,longitude] if lat and lng are available else null
     const geoObject = data[0].map.lat && data[0].map.lng ? data[0].map : null;
 
+    //set search title from object city state and zipcode as string
+    setSearchTitle([geoObject.city,geoObject.state,geoObject.zipcode].join(" "));
+
     //create url with params from geoObject
-    const yelpLocationsApi = "/socialite/api/yelpLocations/byGeo/?" + $.param(geoObject);
+    const yelpLocationsApi = "/socialite/api/yelpLocations/byGeo/?" + $.param({lat: geoObject.lat, lng: geoObject.lng});
     
     sendGetRequest(yelpLocationsApi, parseYelpResponse);
 }
+
+/**
+ * takes title and replaces value of search title in dom
+ * @param title
+ * @returns {Element}
+ */
+const setSearchTitle = title => document.querySelector("#searchedLocation").textContent = title;
+
 
 /**
  * gets called after location request to handle results
@@ -59,35 +82,62 @@ const requestLocations = data => {
 const parseYelpResponse = data => {
 
     if (Object.keys(data).length > 0) {
-        const locationCardTemplate = document.querySelector("#template-card");
-        const results = document.createElement("div");
-        results.id = "results";
-        results.className = "card-deck"
+        const results = document.querySelector("#results").cloneNode(true);
 
         // loop through locations and create card elements
-        for (const location of data) {
-            const locationCard = locationCardTemplate.content.cloneNode(true);
-            //location card detail
-            const locationImage = locationCard.querySelector("img");
-            locationImage.src = location.map["imgURL"];
-            locationImage.alt = location.map.name + "-yelp-image";
-            const locationName = locationCard.querySelector("h3");
-            locationName.textContent = location.map.name;
-            const addressList = locationCard.querySelector("ul");
-            addressList.childNodes[0].textContent = location.map["address-street"];
-            addressList.childNodes[1].textContent = location.map["address-city-state"];
-            addressList.childNodes[2].textContent = location.map["phone"];
-            const locationRating = locationCard.querySelector(".card-footer");
-            locationRating.textContent = location.map.rating;
-
-            // add card element to results
-            results.appendChild(locationCard);
-        }
+        for (const location of data) { results.appendChild(buildLocationCard(location)); }
 
         // show results
         const resultsContainer = document.querySelector("#resultsContainer");
-        resultsContainer.replaceChild(results,resultsContainer.querySelector("#results"));
+        resultsContainer.replaceChild(results, resultsContainer.querySelector("#results"));
+
+        resultsContainer.style.visibility = "visible";
     }
 }
 
-document.querySelector('#locationSearchForm').addEventListener('submit', LocationSearch);
+/**
+ * grabs template and builds location card from location passed in then returns
+ * @param location
+ * @returns {Node}
+ */
+const buildLocationCard = location => {
+    const locationCard = document.querySelector("#template-card").content.cloneNode(true);
+
+    //location card detail
+    const locationImage = locationCard.querySelector("img");
+    locationImage.src = location.map["imgURL"];
+    locationImage.alt = location.map.name + "-yelp-image";
+
+    const locationName = locationCard.querySelector("h4");
+    locationName.textContent = location.map.name;
+
+    const addressList = locationCard.querySelector(".addressList");
+    addressList.childNodes[0].textContent = location.map["address-street"];
+    addressList.childNodes[1].textContent = location.map["address-city-state"];
+    addressList.childNodes[2].textContent = location.map["phone"];
+
+    const locationRating = locationCard.querySelector(".star-rating");
+
+    // loop through rating and output star
+    for (let x = location.map.rating; x > 0; x--) {
+        let starContainer = document.createElement("li");
+        let starIcon = document.createElement("i");
+
+        // set star icon to either full or half depending if half or full number
+        starIcon.className = "fas fa-star" + (x - 1 >= .5 ? "" : "-half");
+
+        // add to container
+        starContainer.appendChild(starIcon);
+        locationRating.appendChild(starContainer);
+    }
+
+    return locationCard;
+}
+
+/**
+ * checks if zipcode is set in appdata and persists on page load
+ * @returns {boolean|null}
+ */
+export const CheckLastSearched = () => {
+    if (appData.lastZipcodeSearched !== null) { LocationSearch(appData.lastZipcodeSearched); }
+}

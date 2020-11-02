@@ -1,7 +1,8 @@
-<Context docBase="socialite" path="/socialite" reloadable="true">
+<Context docBase="socialite" path="/socialite" reloadable="true">'
+    <Valve className="org.apache.catalina.authenticator.FormAuthenticator" landingPage="/index.jsp"/>
     <Realm className="org.apache.catalina.realm.JDBCRealm"
            driverName="com.mysql.cj.jdbc.Driver"
-           connectionURL="jdbc:mysql://localhost:3306/socialite?user=tomcat&amp;password=tomcat"
+           connectionURL="jdbc:mysql://localhost:3306/socialite?serverTimezone=UTC&amp;user=tomcat&amp;password=tomcat"
            userTable="users" userNameCol="username" userCredCol="password"
            userRoleTable="user_roles" roleNameCol="role_name" >
     </Realm>
