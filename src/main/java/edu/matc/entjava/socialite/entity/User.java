@@ -25,6 +25,7 @@ public class User {
     private String firstName;
     private String email;
     private Boolean isAdmin;
+    private LocalDate dateOfBirth;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private Set<UserPlan> userPlans = new HashSet<>();
@@ -62,20 +63,22 @@ public class User {
     /**
      * Instantiates a new User.
      *
-     * @param username  the username
-     * @param password  the password
-     * @param lastName  the last name
-     * @param firstName the first name
-     * @param email     the email
-     * @param isAdmin   the is admin
+     * @param username    the username
+     * @param password    the password
+     * @param lastName    the last name
+     * @param firstName   the first name
+     * @param email       the email
+     * @param dateOfBirth the date of birth
+     * @param isAdmin     the is admin
      */
-    public User(String username, String password, String lastName, String firstName, String email, Boolean isAdmin) {
+    public User(String username, String password, String lastName, String firstName, String email, LocalDate dateOfBirth, Boolean isAdmin) {
         this.username = username;
         this.password = password;
         this.lastName = lastName;
         this.firstName = firstName;
         this.email = email;
         this.isAdmin = isAdmin;
+        this.dateOfBirth = dateOfBirth;
     }
 
     /**
@@ -202,6 +205,24 @@ public class User {
      */
     public void setEmail(String email) {
        this.email = email;
+    }
+
+    /**
+     * Gets date of birth.
+     *
+     * @return the date of birth
+     */
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    /**
+     * Sets date of birth.
+     *
+     * @param dateOfBirth the date of birth
+     */
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     /**
@@ -413,6 +434,7 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", email='" + email + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", isAdmin=" + isAdmin +
                 ", id=" + id +
                 '}';

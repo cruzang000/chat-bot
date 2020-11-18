@@ -1,26 +1,20 @@
-import FormValidation from "./FormValidation.js";
 
 /**
  * module controls logic for location search form submission, validates and sends data to java back end api
- * @param paramZipcode optional pass in zipcode, if not passed in assumes form was submitted
  * @returns {boolean}
  * @constructor
+ * @param zipcode
  */
-export const LocationSearch = (paramZipcode = 0) => {
+export const LocationSearch = (zipcode = 0) => {
     event.preventDefault();
 
     // get search form from dom
-    const searchForm = document.getElementById("locationSearchForm").elements;
+    if (zipcode === 0) {
+        zipcode = document.getElementById("location-search-form").elements.namedItem("location").value;
+    }
 
-    // check if zipcode was passed in param if not gets zipcode value from form, then validates
-    const zipcode = !isNaN(paramZipcode) ? parseInt(paramZipcode) : searchForm.namedItem("location").value;
-    const formData = { zipcode: zipcode };
-
-    //returns true if errors were found else false if validation passed
-    const validationResults = new FormValidation(formData).validateForm();
-
-    //if valid results create house object passing in house form data
-    if (!(validationResults).includes(false)) { requestLocations(formData.zipcode); }
+    // call request locations
+    requestLocations(zipcode);
 
     return false;
 };
@@ -34,7 +28,10 @@ const sendGetRequest = (url, callback) => {
     fetch(url, {headers: {'Content-type': 'application/json; charset=UTF-8', 'Accept': 'application/json'}})
     .then(response => response.json()) // parse response as json
     .then(data => callback(data))// pass data to call back function
-    .catch((error) => { alert("Error sending request, try again." + " url: " + url) });
+    .catch((error) => {
+        console.log(error);
+        alert("Error sending request, try again." + " url: " + url)
+    });
 }
 
 /**

@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <section class="d-flex flex-wrap">
     <nav class="navbar navbar-expand-sm bg-dark-navy text-white col-12 p-0">
         <h1 class="text-right">SociaLite</h1>
@@ -9,20 +10,23 @@
         <ul class="list-unstyled">
             <ul class="list-unstyled d-flex flex-wrap">
                 <li>
-                    <button class="btn btn-outline-light">Sign Up</button>
-                </li>
-                <li>
                     <a href="${pageContext.request.contextPath}/" class="btn btn-outline-light">Find Plans</a>
                 </li>
                 <li>
-                    <a href="#" title="Login" data-toggle="loginPopover" class="btn btn-outline-light popoverTrigger"
-                       data-template-file="${pageContext.request.contextPath}/jsp/member/loginForm.jsp">Login</a>
+                    <button type="button" class="btn btn-outline-light modalTrigger" value="signup" data-toggle="modal"
+                            data-target="#genericModal" data-template="${pageContext.request.contextPath}/jsp/signupForm.jsp">
+                        Sign Up
+                    </button>
                 </li>
                 <li>
                     <a href="${pageContext.request.contextPath}/jsp/member/memberHome.jsp" class="btn btn-outline-light">
-                        Member Home(for testing)</a>
+                        Login
+                    </a>
                 </li>
             </ul>
         </ul>
     </nav>
 </section>
+
+<%-- modal template for js --%>
+<%@ include file = "/jsp/genericModal.jsp" %>

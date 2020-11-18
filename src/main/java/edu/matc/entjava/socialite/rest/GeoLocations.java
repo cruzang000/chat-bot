@@ -52,7 +52,6 @@ public class GeoLocations {
             User user = (User) new GenericDao(User.class).getByPropertyValue("username", username).get(0);
 
             Search[] searches = geoDao.getGeoLocationsByZipcode(Integer.parseInt(zipcode), Integer.parseInt(maxRows), user);
-
             // loop searches
             for (Search search : searches) { locations.put(searchToJson(search)); }
         }

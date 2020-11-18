@@ -7,6 +7,7 @@ import edu.matc.entjava.socialite.testUtils.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -80,7 +81,8 @@ class UserDaoTest {
 
         int id = 0;
 
-        User newUser = new User("cruzang", "test", "cruz", "angel", "testInsert@madisoncollege.edu", true);
+        User newUser = new User("cruzang", "test", "cruz", "angel",
+                "testInsert@madisoncollege.edu", LocalDate.parse("1994-09-09"), true);
 
         id = dao.insert(newUser);
 

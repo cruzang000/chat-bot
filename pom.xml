@@ -26,6 +26,7 @@
     <jackson-version>2.10.0</jackson-version>
     <apache-commons-version>3.11</apache-commons-version>
     <org-json-version>20200518</org-json-version>
+    <org-projectlombok-version>1.18.16</org-projectlombok-version>
   </properties>
 
   <dependencies>
@@ -140,7 +141,16 @@
       <artifactId>json</artifactId>
       <version>${org-json-version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${org-projectlombok-version}</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
+
+
   <build>
     <finalName>Socialite</finalName>
     <pluginManagement>

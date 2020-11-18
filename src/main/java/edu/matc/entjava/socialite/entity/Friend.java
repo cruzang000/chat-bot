@@ -1,5 +1,8 @@
 package edu.matc.entjava.socialite.entity;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -13,6 +16,8 @@ import java.util.Objects;
  */
 @Entity(name = "Friend")
 @Table(name = "friends")
+@Getter
+@Setter
 public class Friend {
 
     @ManyToOne
@@ -31,7 +36,7 @@ public class Friend {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
-    private int id;
+    @Setter(AccessLevel.PROTECTED) private int id;
 
     /**
      * Instantiates a new friend.
@@ -50,114 +55,6 @@ public class Friend {
         this.requester_user = requester_user;
         this.requested_user = requested_user;
         this.accepted = accepted;
-    }
-
-    /**
-     * Gets requester_user.
-     *
-     * @return the requester_user
-     */
-    public User getRequester_user() {
-        return requester_user;
-    }
-
-    /**
-     * Sets requester_user.
-     *
-     * @param requester_user the requester_user
-     */
-    public void setRequester_user(User requester_user) {
-        this.requester_user = requester_user;
-    }
-
-    /**
-     * Gets requested_user.
-     *
-     * @return the requested_user
-     */
-    public User getRequested_user() {
-        return requested_user;
-    }
-
-    /**
-     * Sets requested_user.
-     *
-     * @param requested_user the requested_user
-     */
-    public void setRequested_user(User requested_user) {
-        this.requested_user = requested_user;
-    }
-
-    /**
-     * Gets accepted.
-     *
-     * @return the accepted
-     */
-    public Boolean getAccepted() {
-        return accepted;
-    }
-
-    /**
-     * Sets accepted.
-     *
-     * @param accepted the accepted
-     */
-    public void setAccepted(Boolean accepted) {
-        this.accepted = accepted;
-    }
-
-    /**
-     * Gets created.
-     *
-     * @return the created
-     */
-    public LocalDateTime getCreated() {
-        return created;
-    }
-
-    /**
-     * Sets created.
-     *
-     * @param created the created
-     */
-    public void setCreated(LocalDateTime created) {
-        this.created = created;
-    }
-
-    /**
-     * Gets modified.
-     *
-     * @return the modified
-     */
-    public LocalDateTime getModified() {
-        return modified;
-    }
-
-    /**
-     * Sets modified.
-     *
-     * @param modified the modified
-     */
-    public void setModified(LocalDateTime modified) {
-        this.modified = modified;
-    }
-
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
     }
 
     @Override

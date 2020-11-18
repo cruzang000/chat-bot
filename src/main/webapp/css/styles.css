@@ -2,6 +2,13 @@
     background-color: #101562 !important;
 }
 
+.error {
+    color: #ff0000;
+}
+.alert {
+
+}
+
 .bg-dark-navy {
     background-color: #121e4d !important;
 }
@@ -45,4 +52,9 @@
 
 .searchSubText {
     font-size: .8em;
+}
+
+#genericModal .modal-dialog {
+    margin: auto .5rem;
+    width: 100%;
 }

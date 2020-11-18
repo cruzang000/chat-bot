@@ -33,5 +33,10 @@
         * got tests to pass and succesfull insert of entities and associated entities
 
 * week 8:
-* 10 hours
-    * got landing page working, users are able to search with a zipcode and get locatoins from yelp api now
+    * 10 hours
+        * got landing page working, users are able to search with a zipcode and get locations from yelp api now
+
+
+* week 9:
+    * 15 hours
+        * implemented user sign up
