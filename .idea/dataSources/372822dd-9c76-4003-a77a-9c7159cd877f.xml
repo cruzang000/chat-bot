@@ -5964,7 +5964,7 @@ User</ColNames>
     </column>
     <column id="828" parent="321" name="yelpUrl">
       <Position>3</Position>
-      <DataType>text|0s</DataType>
+      <DataType>varchar(2083)|0s</DataType>
     </column>
     <column id="829" parent="321" name="yelpID">
       <Position>4</Position>

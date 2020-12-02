@@ -1,3 +1,4 @@
+import {UserPlanRequest} from "./UserPlans.js";
 
 /**
  * module controls logic for location search form submission, validates and sends data to java back end api
@@ -29,7 +30,6 @@ const sendGetRequest = (url, callback) => {
     .then(response => response.json()) // parse response as json
     .then(data => callback(data))// pass data to call back function
     .catch((error) => {
-        console.log(error);
         alert("Error sending request, try again." + " url: " + url)
     });
 }
@@ -79,10 +79,15 @@ const setSearchTitle = title => document.querySelector("#searchedLocation").text
 const parseYelpResponse = data => {
 
     if (Object.keys(data).length > 0) {
-        const results = document.querySelector("#results").cloneNode(true);
+        appData.lastSearchedPlans = data;
+
+        const results = document.querySelector("#results").cloneNode(true)
+        const currentUserPlans = user ? new UserPlanRequest().getCurrentUserPlanIds() : null;
 
         // loop through locations and create card elements
-        for (const location of data) { results.appendChild(buildLocationCard(location)); }
+        for (const location of data) {
+            results.appendChild(buildLocationCard(location, currentUserPlans));
+        }
 
         // show results
         const resultsContainer = document.querySelector("#resultsContainer");
@@ -95,9 +100,10 @@ const parseYelpResponse = data => {
 /**
  * grabs template and builds location card from location passed in then returns
  * @param location
+ * @param currentPlans
  * @returns {Node}
  */
-const buildLocationCard = location => {
+const buildLocationCard = (location, currentPlans) => {
     const locationCard = document.querySelector("#template-card").content.cloneNode(true);
 
     //location card detail
@@ -126,6 +132,25 @@ const buildLocationCard = location => {
         // add to container
         starContainer.appendChild(starIcon);
         locationRating.appendChild(starContainer);
+    }
+
+    // check if button should be added by checking user variable
+    if (currentPlans) {
+        const button = locationCard.querySelector("button");
+        button.className = "btn"
+
+        // check if location id in currentPlans and output appropriate button
+        currentPlans.then(currentPlans =>  {
+            console.log("lcaotionYelpID: " + location.map.yelpID)
+            console.log(currentPlans);
+            if (!currentPlans.includes(location.map.yelpID)) {
+                button.textContent = "add as plan";
+                button.className += " btn-success";
+                button.dataset.action = "add";
+
+                button.style.display = "initial";
+            }
+        });
     }
 
     return locationCard;

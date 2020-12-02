@@ -79,6 +79,7 @@ public class YelpLocations {
 
         // add properties needed
         locationObject.put("id", location.getId()); // id
+        locationObject.put("yelpID", location.getYelpID());
         locationObject.put("name", location.getName()); // name
         locationObject.put("imgURL", location.getImageUrl()); // image url
         locationObject.put("address-street", locationAddress.getStreet()); // street address

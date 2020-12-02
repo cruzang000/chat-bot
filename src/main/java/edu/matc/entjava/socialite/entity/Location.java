@@ -21,7 +21,7 @@ public class Location {
 
     @JsonProperty("name")
     private String name;
-    @JsonProperty("yelpUrl")
+    @JsonProperty("url")
     private String yelpUrl;
     @JsonProperty("id")
     private String yelpID;

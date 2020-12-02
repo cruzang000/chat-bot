@@ -13,6 +13,7 @@ public class SocialiteApplication extends Application {
         HashSet h = new HashSet<Class<?>>();
         h.add(GeoLocations.class);
         h.add(YelpLocations.class);
+        h.add(UserPlans.class);
         return h;
     }
 }

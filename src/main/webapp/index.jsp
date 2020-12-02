@@ -7,19 +7,21 @@
 
 <noscript>enable javascript to get full functionality!</noscript>
 
-<header>
-    <%-- include nav bar --%>
-    <%@ include file = "/jsp/navbar.jsp" %>
-</header>
+<%-- include nav bar --%>
+<%@ include file = "/jsp/header.jsp" %>
 
 <%@ include file="/jsp/alert.jsp" %>
 
+
+<script>
+    let user = "${sessionScope.getOrDefault("user", null)}";
+</script>
 <main class="container-fluid p-0">
     <div class="col-12 p-0 pr-md-3 mt-5">
         <%-- search bar --%>
         <section class="bg-navy text-white d-flex flex-column shadow rounded px-3 py-1">
             <section class="d-flex flex-wrap align-items-end text-center">
-                <h2 class="col-12">${getRemoteUser()}Plans Tonight? ${req.getRemoteUser()}</h2>
+                <h2 class="col-12">Plans Tonight?</h2>
                 <div class="col-12">
                     <div class="d-flex flex-row justify-content-center my-1">
                         <div class="searchIcon mx-2">
@@ -73,6 +75,11 @@
                                     <li></li>
                                     <li class="py-2"></li>
                                 </ul>
+                            </section>
+                        </div>
+                        <div class="card-footer">
+                            <section class="d-flex justify-content-end">
+                                <button></button>
                             </section>
                         </div>
                     </div>

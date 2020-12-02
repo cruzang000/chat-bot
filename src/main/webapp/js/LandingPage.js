@@ -8,9 +8,7 @@ $(document).ready(function(){
     // set on click event for sign up modal
     document.querySelector(".modalTrigger").addEventListener("click", function() {
         CreateGenericModal(this);
-        console.log("add event")
         formValidator.SignupValidator();
-        console.log("event added")
     });
 
     formValidator.ZipcodeSearchValidator();

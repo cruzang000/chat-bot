@@ -40,3 +40,21 @@
 * week 9:
     * 15 hours
         * implemented user sign up
+* week 10:
+    * 6 hours
+        * implementing log in functionality
+            * spent some time learning how to get logged in user data
+            
+* week 11:
+    * 4 hours
+        * started team project
+        
+* week 12:
+    * 4 hours
+        * wrapped up team project
+        * implemented logged in user functionality for user plans
+        * wrapped up user sign up validation
+* week 13:
+    * 4 hours
+        * weekly activity and continued some debugging on individual project
+    

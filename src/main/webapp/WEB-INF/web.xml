@@ -6,6 +6,28 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
     <display-name>Socialite</display-name>
 
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>UserSignUpServlet</servlet-name>
+        <servlet-class>edu.matc.entjava.socialite.controller.UserSignUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserSignUpServlet</servlet-name>
+        <url-pattern>/userSignUp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MemberHome</servlet-name>
+        <servlet-class>edu.matc.entjava.socialite.controller.member.MemberHome</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MemberHome</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
     <!-- Protect everything in the adminOnly directory -->
     <security-constraint>
     <web-resource-collection>
@@ -26,6 +48,17 @@
         <web-resource-collection>
             <web-resource-name>member</web-resource-name>
             <url-pattern>/jsp/member/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>member</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <!-- Protect everything in the adminOnly directory -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>memberHome</web-resource-name>
+            <url-pattern>/home</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>member</role-name>

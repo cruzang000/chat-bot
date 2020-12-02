@@ -1,5 +1,5 @@
 
-class GenericModal {
+export class GenericModal {
     constructor(modalType, templateFile) {
         this.modalType = modalType;
         this.templateFile = templateFile;

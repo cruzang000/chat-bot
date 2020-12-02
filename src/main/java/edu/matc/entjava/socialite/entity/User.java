@@ -1,5 +1,7 @@
 package edu.matc.entjava.socialite.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -27,6 +29,8 @@ public class User {
     private Boolean isAdmin;
     private LocalDate dateOfBirth;
 
+
+    @JsonUnwrapped
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private Set<UserPlan> userPlans = new HashSet<>();
 
