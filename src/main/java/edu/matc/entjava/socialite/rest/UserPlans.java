@@ -48,7 +48,6 @@ public class UserPlans {
             }
         }
 
-        logger.info(userPlansArray);
         // return response with location json array
         return Response.ok().entity(userPlansArray).build();
     }

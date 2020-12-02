@@ -22,7 +22,7 @@ public class YelpDao implements PropertiesLoader {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     protected Properties properties;
-    GenericDao genericDao;
+    protected GenericDao genericDao;
 
     /**
      * make request to yelp api using geo locations, ands locations to db and
@@ -66,8 +66,14 @@ public class YelpDao implements PropertiesLoader {
             //map location, location.locationCategories, location.locationAddresses
             locations = mapper.readValue(businesses.toString(), Location[].class);
 
-//            //add locations, locationCategories, and locationAddresses to db
-//            Arrays.stream(locations).forEach(genericDao::insert);
+            //add locations, locationCategories, and locationAddresses to db if they dont exist already
+            Arrays.stream(locations).forEach(
+                    entity -> {
+                        if (genericDao.getByPropertyValue("yelpID", entity.getYelpID()).size() == 0) {
+                            genericDao.insert(entity);
+                        }
+                    }
+            );
         } catch (JsonProcessingException e) {
             logger.error("GeoSearch request error:", e);
         }
