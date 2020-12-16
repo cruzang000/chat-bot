@@ -78,7 +78,7 @@ public class YelpLocations {
         JSONObject locationObject = new JSONObject();
 
         // add properties needed
-        locationObject.put("id", location.getId()); // id
+        locationObject.put("locationId", location.getId()); // id
         locationObject.put("yelpID", location.getYelpID());
         locationObject.put("name", location.getName()); // name
         locationObject.put("imgURL", location.getImageUrl()); // image url

@@ -35,7 +35,9 @@ public class MemberHome extends HttpServlet {
             String username = request.getUserPrincipal().getName();
 
             User user = (User) new GenericDao(User.class).getByPropertyValue("username", username).get(0);
-            logger.info(user.getUserPlans());
+
+            // set session and req attributes
+            request.setAttribute("currentUserPlans", user.getCurrentPlans());
             session.setAttribute("user", user);
         }
 

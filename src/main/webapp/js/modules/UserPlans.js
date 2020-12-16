@@ -12,6 +12,23 @@ export class UserPlanRequest {
         return this.userGetRequest(this.baseUrl + "/userPlanLocationIds");
     }
 
+    /**
+     * remove user plan
+     * @param locationId
+     * @returns {Promise<*>}
+     */
+    removeUserPlan = async (locationId) => this.userGetRequest(`${this.baseUrl}/manageUserPlan?${$.param({
+        locationId: locationId, action: "remove"})}`);
+
+
+    /**
+     * add user plan
+     * @returns {Promise<*>}
+     * @param locationId
+     */
+    addUserPlan = async (locationId) => this.userGetRequest(`${this.baseUrl}/manageUserPlan?${$.param({
+        locationId: locationId, action: "add"})}`);
+
     userGetRequest = async (url) => {
         return await fetch(url, {
             headers: {
@@ -19,29 +36,6 @@ export class UserPlanRequest {
                 'Accept': 'application/json'
             }
         }).then(response => response.json())
-    }
-
-    userPostRequest = async url => {
-        // let response = "";
-        //
-        // console.log(url + "|?" + locationID)
-        // if (new LocalValidator().validationRegex("\d+", locationID)) {
-        //
-        //     return await fetch(url, {
-        //         headers: {'Content-type': 'application/json; charset=UTF-8', 'Accept': 'application/json'},
-        //         method: 'post',
-        //         body: JSON.stringify({locationId: locationID})
-        //     })
-        //     .then(response => response.json()) // parse response as json
-        //     .then(data => data)
-        //     .catch((error) => {
-        //         console.log(error);
-        //         alert("Error sending request, try again." + " url: " + url)
-        //     });
-        //
-        // }
-        //
-        // return response;
     }
 }
 

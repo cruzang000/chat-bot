@@ -1,6 +1,5 @@
 <head>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-    <%@ page session="true" %>
 
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -20,6 +19,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
     <script src="${pageContext.request.contextPath}/js/LocalStorage.js"></script>
     <script src="${pageContext.request.contextPath}/js/main.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
-    <title>Socialite</title>
+    <title>socialite</title>
 </head>

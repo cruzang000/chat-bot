@@ -15,6 +15,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 import org.json.*;
 
@@ -49,7 +50,7 @@ public class YelpDao implements PropertiesLoader {
 
         //json object
         JSONArray businesses = new JSONObject(response).getJSONArray("businesses");
-        logger.info(businesses.get(0));
+
         genericDao = new GenericDao(Location.class);
 
         //instantiate and configure object mapper to use java array
@@ -66,14 +67,17 @@ public class YelpDao implements PropertiesLoader {
             //map location, location.locationCategories, location.locationAddresses
             locations = mapper.readValue(businesses.toString(), Location[].class);
 
-            //add locations, locationCategories, and locationAddresses to db if they dont exist already
-            Arrays.stream(locations).forEach(
-                    entity -> {
-                        if (genericDao.getByPropertyValue("yelpID", entity.getYelpID()).size() == 0) {
-                            genericDao.insert(entity);
-                        }
-                    }
-            );
+            //add locations, locationCategories, and locationAddresses to db if they dont exist already,
+            // else get existing location and set to current spot
+            for (int i = 0; i < locations.length; i++) {
+                List<Location> matching = genericDao.getByPropertyValue("yelpID", locations[i].getYelpID());
+
+                if (matching.size() > 0) {
+                    locations[i] = matching.get(0);
+                } else {
+                    locations[i].setId(genericDao.insert(locations[i]));
+                }
+            }
         } catch (JsonProcessingException e) {
             logger.error("GeoSearch request error:", e);
         }

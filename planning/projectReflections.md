@@ -1,4 +1,4 @@
-# Socialite development reflections
+# socialite development reflections
 
 ##### Checkpoints
 

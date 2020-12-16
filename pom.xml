@@ -6,7 +6,7 @@
   <artifactId>socialite</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>Socialite</name>
+  <name>socialite</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -161,7 +161,7 @@
 
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
-    <finalName>Socialite</finalName>
+    <finalName>socialite</finalName>
     <pluginManagement>
       <plugins>
         <plugin>

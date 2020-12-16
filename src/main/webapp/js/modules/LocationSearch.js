@@ -30,7 +30,7 @@ const sendGetRequest = (url, callback) => {
     .then(response => response.json()) // parse response as json
     .then(data => callback(data))// pass data to call back function
     .catch((error) => {
-        alert("Error sending request, try again." + " url: " + url)
+        alert("Error sending request, try again." + " url: " + error)
     });
 }
 
@@ -71,6 +71,40 @@ const requestFromYelp = data => {
  */
 const setSearchTitle = title => document.querySelector("#searchedLocation").textContent = title;
 
+const planAction = () => {
+    const buttonClicked = event.currentTarget;
+
+    if (buttonClicked && buttonClicked.dataset.locationId) {
+        const userPlanRequest = new UserPlanRequest();
+        const buttonElement = document.querySelector(`#${buttonClicked.id.toString()}`);
+        let promise = null;
+
+        switch (buttonClicked.dataset.action) {
+            case "add":
+                promise = userPlanRequest.addUserPlan(buttonClicked.dataset.locationId).then(
+                    data => {
+                        if (data.map["wasAdded"]) {
+                            buttonElement.className = "planAction btn btn-danger mb-3";
+                            buttonElement.dataset.action = "remove";
+                            buttonElement.textContent = "remove plan";
+                        }
+                    }
+                );
+                break;
+            case "remove":
+                promise = userPlanRequest.removeUserPlan(buttonClicked.dataset.locationId).then(
+                    data => {
+                        if (data.map["wasRemoved"]) {
+                            buttonElement.className = "planAction btn btn-success mb-3";
+                            buttonElement.dataset.action = "add";
+                            buttonElement.textContent = "add as plan";
+                        }
+                    }
+                );
+                break;
+        }
+    }
+}
 
 /**
  * gets called after location request to handle results
@@ -81,19 +115,17 @@ const parseYelpResponse = data => {
     if (Object.keys(data).length > 0) {
         appData.lastSearchedPlans = data;
 
-        const results = document.querySelector("#results").cloneNode(true)
-        const currentUserPlans = user ? new UserPlanRequest().getCurrentUserPlanIds() : null;
+        const results = document.querySelector("#results");
+        results.innerHTML = "";
+
+        const currentUserPlans = user != null ? new UserPlanRequest().getCurrentUserPlanIds() : null;
 
         // loop through locations and create card elements
         for (const location of data) {
             results.appendChild(buildLocationCard(location, currentUserPlans));
         }
 
-        // show results
-        const resultsContainer = document.querySelector("#resultsContainer");
-        resultsContainer.replaceChild(results, resultsContainer.querySelector("#results"));
-
-        resultsContainer.style.visibility = "visible";
+        document.querySelector("#resultsContainer").style.visibility = "visible";
     }
 }
 
@@ -111,7 +143,7 @@ const buildLocationCard = (location, currentPlans) => {
     locationImage.src = location.map["imgURL"];
     locationImage.alt = location.map.name + "-yelp-image";
 
-    const locationName = locationCard.querySelector("h4");
+    const locationName = locationCard.querySelector("h3");
     locationName.textContent = location.map.name;
 
     const addressList = locationCard.querySelector(".addressList");
@@ -135,20 +167,26 @@ const buildLocationCard = (location, currentPlans) => {
     }
 
     // check if button should be added by checking user variable
-    if (currentPlans) {
+    if (currentPlans && user) {
         const button = locationCard.querySelector("button");
-        button.className = "btn"
+        button.className = "planAction mb-3 btn";
+        button.style.display = "block";
+        button.onclick = () => { planAction() }
+        button.style.display = "initial";
+        button.dataset.locationId = location.map.locationId;
+        button.id = `id_${location.map.locationId}`;
 
         // check if location id in currentPlans and output appropriate button
         currentPlans.then(currentPlans =>  {
-            console.log("lcaotionYelpID: " + location.map.yelpID)
-            console.log(currentPlans);
-            if (!currentPlans.includes(location.map.yelpID)) {
+            if (!currentPlans.includes(location.map.locationId)) {
                 button.textContent = "add as plan";
                 button.className += " btn-success";
                 button.dataset.action = "add";
 
-                button.style.display = "initial";
+            } else {
+                button.textContent = "remove plan";
+                button.className += " btn-danger";
+                button.dataset.action = "remove";
             }
         });
     }

@@ -57,4 +57,21 @@
 * week 13:
     * 4 hours
         * weekly activity and continued some debugging on individual project
+
+* week 13:
+    * 10 hours
+        * implemented adding plan adding api to avoid page reload
+        * lots of debugging
+        
+* week 13:
+    * 4 hours
+        * implemented removing plans, and worked on user interface
+        * more debugging
+* week 14:
+    * 4 hours
+        * implemented home page for members and showing user information as well as their current plans
+
+* week 15
+    * 5 hours
+        * worked on getting the app fully debugged and added in some error handling as well as changes to the ui
     

@@ -22,6 +22,7 @@ export class GenericModal {
     showModal = () => {
         const template = this.generateModalTemplate();
 
+        template.querySelector(".modal-title").textContent = this.modalType;
         template.querySelector(".modal-body").appendChild(this.buildModalBody()[0]);
 
         const elementToAppend = document.querySelector(".modal-dialog");

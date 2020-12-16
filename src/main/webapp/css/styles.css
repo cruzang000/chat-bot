@@ -1,12 +1,26 @@
+:root {
+    --blue-light: #8fabe5;
+    --grey-brown: #f2f2f2;
+}
+
+body {
+    background-color: var(--blue-light);
+}
+
 .bg-navy {
     background-color: #101562 !important;
 }
 
+.bg-black {
+    background-color: #000 !important;
+}
+
+.bg-blue-purple {
+    background-color: #3a41ab !important;
+}
+
 .error {
     color: #ff0000;
-}
-.alert {
-
 }
 
 .bg-dark-navy {
@@ -35,11 +49,15 @@
 }
 
 .bg-blue-light {
-    background-color: #8fabe5 !important;
+    background-color: var(--blue-light) !important;
 }
 
 .bg-dark-grey {
     background-color: #3e485d;
+}
+
+.bg-grey-brown {
+    background-color: var(--grey-brown) !important;
 }
 
 .opacity-medium {
@@ -50,11 +68,29 @@
     visibility: hidden;
 }
 
+.noDisplay {
+    display: none;
+}
+
 .searchSubText {
     font-size: .8em;
+}
+
+.pb-6 {
+    padding-bottom: 5rem !important;
 }
 
 #genericModal .modal-dialog {
     margin: auto .5rem;
     width: 100%;
 }
+
+#resultsContainer {
+    overflow-y: auto;
+    height: 64vh;
+}
+
+#j_submit {
+    letter-spacing: 2.5px;
+}
+

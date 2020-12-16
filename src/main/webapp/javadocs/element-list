@@ -1,0 +1,8 @@
+edu.matc.entjava.socialite.controller
+edu.matc.entjava.socialite.controller.member
+edu.matc.entjava.socialite.entity
+edu.matc.entjava.socialite.persistence
+edu.matc.entjava.socialite.rest
+edu.matc.entjava.socialite.service
+edu.matc.entjava.socialite.testUtils
+edu.matc.entjava.util

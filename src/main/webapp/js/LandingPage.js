@@ -6,10 +6,14 @@ $(document).ready(function(){
     // import FormValidator object
     const formValidator = new FormValidator();
     // set on click event for sign up modal
-    document.querySelector(".modalTrigger").addEventListener("click", function() {
-        CreateGenericModal(this);
-        formValidator.SignupValidator();
-    });
+    const modalTrigger = document.querySelector(".modalTrigger");
+
+    if (modalTrigger) {
+        modalTrigger.addEventListener("click", function() {
+            CreateGenericModal(this);
+            formValidator.SignupValidator();
+        });
+    }
 
     formValidator.ZipcodeSearchValidator();
 });

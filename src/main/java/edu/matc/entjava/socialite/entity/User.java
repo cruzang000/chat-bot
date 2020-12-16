@@ -140,6 +140,14 @@ public class User {
     }
 
     /**
+     * uses first name nad last name to return full name
+     * @return full name
+     */
+    public String getFullName() {
+        return this.firstName + " " + this.lastName;
+    }
+
+    /**
      * Gets password.
      *
      * @return the password

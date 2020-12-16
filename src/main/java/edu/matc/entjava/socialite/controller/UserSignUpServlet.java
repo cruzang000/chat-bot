@@ -73,7 +73,7 @@ public class UserSignUpServlet extends HttpServlet {
      * @return map of user details
      */
     private Map<String, String> parseUserDetails(HttpServletRequest request) {
-         return new HashMap<>() {
+        return new HashMap<>() {
             {
                 put("firstName", request.getParameter("firstName"));
                 put("lastName", request.getParameter("lastName"));
@@ -89,7 +89,7 @@ public class UserSignUpServlet extends HttpServlet {
     /**
      * validate user data from map passed in as param
      * @param signUpDetails map of user details
-     *                    
+     *
      * @return string array of validation results
      */
     private String[] validateInsertData(Map<String, String> signUpDetails){
@@ -97,19 +97,19 @@ public class UserSignUpServlet extends HttpServlet {
 
         //validate params adds error or empty message to position in string array
         return new String[]{
-            fieldValidator.validateOnlyLettersString(signUpDetails.get("firstName"), 0,
-                    "<li>First name is invalid, must be only letters.</li>"),
-            fieldValidator.validateOnlyLettersString(signUpDetails.get("lastName"), 0,
-                    "<li>Last name is invalid, must be only letters.</li>"),
-            fieldValidator.validateDate(signUpDetails.get("dateOfBirth"),"<li>Date of birth is invalid, must be valid date of birth [MM/DD/YYYY].</li>"),
-            fieldValidator.validateMinAge(signUpDetails.get("dateOfBirth"), 18, "<li>Age must be over 18.</li>"),
-            fieldValidator.validateEmail(signUpDetails.get("email"), "<li>Email is invalid is invalid.</li>"),
-            fieldValidator.validateDuplicateProperty(User.class, "email", signUpDetails.get("email"),
-                    "<li>email is already being used.</li>"),
-            fieldValidator.validateByRegex(signUpDetails.get("username"), "[a-zA-z][A-za-z0-9]+",
-                    "<li>Username is invalid, must start with a letter and include letters or numbers.</li>"),
-            fieldValidator.validateDuplicateProperty(User.class, "username", signUpDetails.get("username"),
-                    "<li>Username is already being used.</li>"),
+                fieldValidator.validateOnlyLettersString(signUpDetails.get("firstName"), 0,
+                        "<li>First name is invalid, must be only letters.</li>"),
+                fieldValidator.validateOnlyLettersString(signUpDetails.get("lastName"), 0,
+                        "<li>Last name is invalid, must be only letters.</li>"),
+                fieldValidator.validateDate(signUpDetails.get("dateOfBirth"),"<li>Date of birth is invalid, must be valid date of birth [MM/DD/YYYY].</li>"),
+                fieldValidator.validateMinAge(signUpDetails.get("dateOfBirth"), 18, "<li>Age must be over 18.</li>"),
+                fieldValidator.validateEmail(signUpDetails.get("email"), "<li>Email is invalid is invalid.</li>"),
+                fieldValidator.validateDuplicateProperty(User.class, "email", signUpDetails.get("email"),
+                        "<li>email is already being used.</li>"),
+                fieldValidator.validateByRegex(signUpDetails.get("username"), "[a-zA-z][A-za-z0-9]+",
+                        "<li>Username is invalid, must start with a letter and include letters or numbers.</li>"),
+                fieldValidator.validateDuplicateProperty(User.class, "username", signUpDetails.get("username"),
+                        "<li>Username is already being used.</li>"),
         };
     }
 
@@ -125,15 +125,14 @@ public class UserSignUpServlet extends HttpServlet {
 
         try {
             id = dao.insert(new User(
-                signUpDetails.get("username"),
-                signUpDetails.get("password"),
-                signUpDetails.get("lastName"),
-                signUpDetails.get("firstName"),
-                signUpDetails.get("email"),
-                LocalDate.parse(signUpDetails.get("dateOfBirth")),
+                    signUpDetails.get("username"),
+                    signUpDetails.get("password"),
+                    signUpDetails.get("lastName"),
+                    signUpDetails.get("firstName"),
+                    signUpDetails.get("email"),
+                    LocalDate.parse(signUpDetails.get("dateOfBirth")),
                     false)
             );
-            logger.info("id: " + id);
         } catch (ConstraintViolationException e) {
             logger.error("error: Email or username is already used", e);
         }

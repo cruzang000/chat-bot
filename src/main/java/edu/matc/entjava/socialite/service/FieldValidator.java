@@ -96,7 +96,6 @@ public class FieldValidator {
      * @return error message or empty string
      */
     public String validateDuplicateProperty(Class<?> type, String fieldName, String value, String errorMessage) {
-        logger.info("count: " + new GenericDao(type).getByPropertyValue(fieldName, value).size());
         return new GenericDao(type).getByPropertyValue(fieldName, value).size() == 0 ? "" : errorMessage;
     }
 }
